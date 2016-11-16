@@ -1,0 +1,30 @@
+
+<div id="login" >
+	<div class="container">
+		<div class="form-area k-padding">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+					<fieldset>
+						<legend>Login</legend>
+						<div class="form-inner">
+							<form ng-submit="ctrl.login()" name="myForm" >
+								<div class="one-half">
+									<input type="text" name="username" required 
+										placeholder="UserID" ng-model="ctrl.user.id">
+								</div>
+								<div class="one-half">
+									<input type="password" name="password" required 
+										placeholder="Password" ng-model="ctrl.user.password">
+								</div>
+								<div>
+									<input type="submit" class="btn btn-info kp-button floatright"
+										value="login">
+								</div>
+							</form>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

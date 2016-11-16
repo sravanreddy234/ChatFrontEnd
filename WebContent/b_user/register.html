@@ -1,0 +1,69 @@
+<div id="register" >
+	<div class="container">
+		<div class="form-area">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+					<div ng-show='ctrl.user.errorMessage!=""'>
+						<div class="alart alart-danger fade in">
+							Error :	{{ctrl.user.errorMessage}}
+						</div>
+					</div>
+					<fieldset>
+						<legend>Sign Up</legend>
+						<div class="form-inner">
+							<form ng-submit="ctrl.register()" name="myForm"
+								class="form-horizontal">
+								<label>Register As.</label>
+								<div class="one">
+									<input type="radio" name="role" value="STUDENT"
+										ng-model="ctrl.user.role"> Student 
+										<input type="radio" name="role" value="ALUMNI"
+										ng-model="ctrl.user.role"> Alumni 
+										<input type="radio" name="role" value="EMPLOYEE"
+										ng-model="ctrl.user.role"> Employee
+								</div>
+
+								<div class="one-half">
+									<input type="text" name="id"required
+										ng-minlength="5" placeholder="User ID"
+										ng-model="ctrl.user.id" />
+								</div>
+								<div class="one-half">
+									<input type="text" name="name" required
+										ng-minlength="5" placeholder="User Name"
+										ng-model="ctrl.user.name" />
+								</div>
+								<div class="one-half">
+									<input type="password" name="password" required
+										ng-minlength="5" placeholder="Password"
+										ng-model="ctrl.user.password" />
+								</div>
+								<div class="one-half">
+									<input type="email" name="email" id="email" required
+										placeholder="Email Id" ng-model="ctrl.user.email" />
+								</div>
+								<div class="one-half">
+									<input type="tel" name="phone" id="phone" required
+										placeholder="Phone No" ng-model="ctrl.user.phone" />
+								</div>
+								<div class="one-half">
+									<input type="radio" name="gender" id="gender" value="male"
+										ng-model="ctrl.user.gender"> Male 
+									<input type="radio" name="gender" id="gender" value="female"
+										ng-model="ctrl.user.gender"> Female
+								</div>
+
+								<div>
+									<input type="submit" class="btn btn-info kp-button floatright"
+										value="register"> 
+									<input type="button" class="btn btn-info kp-button floatright" 
+										value="reset form" ng-click="ctrl.reset()">
+								</div>
+							</form>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

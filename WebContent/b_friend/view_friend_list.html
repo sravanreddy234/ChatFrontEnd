@@ -1,0 +1,28 @@
+<div id="list-blogs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+
+				<fieldset>
+					<legend>Friend List</legend>
+					<div class="friend-list-font">
+						<div>
+							<div class="panel panel-default" ng-repeat="friend in ctrl.friends" 
+									ng-show="friend.status=='A'" style="margin-bottom: 2em;">
+								<a>
+									<div class="one">
+										<label><span>Friend Id : </span>{{friend.friendId}}</label>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<input type="button" ng-click="" class="btn btn-danger floatright"
+					value="New Requests" style="margin-top: 13px; margin-bottom: 3em; width: 9em; margin-right: 8px;" />
+			</div>
+		</div>
+	</div>
+	
+	
+	

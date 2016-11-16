@@ -1,0 +1,30 @@
+<div id="list-blogs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<fieldset>
+					<legend>Welcome to Forum</legend>
+					<div class="blog-list-font">						
+						<div>
+							<div class="panel panel-default" ng-repeat="forum in ctrl.forums"
+								style="margin-bottom: 2em;">
+								<a>
+									<div class="one">
+										<label><span style="color: black;">Forum Id : </span>{{forum.id}}</label>
+									</div>
+									<div class="one">
+										<label><span style="color: black;">Written By : </span>{{forum.userId}}</label>
+									</div> 
+										<input type="button" ng-click="ctrl.getSelectedForum(forum.id)"
+												class="btn btn-success floatright" value="View" name="myForm"
+												style="margin-top: 13px; width: 10em; margin-right: 8px;" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</div>

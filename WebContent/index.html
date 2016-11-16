@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+<meta charset="UTF-8">
+<title>LetzChat</title>
+
+<!-- Bootstrap, Font Awesome and jQuery css -->
+<link href="resources/css/font-awesome.css" rel="stylesheet">
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/css/jquery-ui.min.css" rel="stylesheet">
+
+<link href="resources/css/myApp.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+	<!-- ---------------------- navbar start -------------------------->
+	<div class="container navigation"  ng-controller="UserController as ctrl">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<!-- <div class="logo">
+					<a class="navbar-brand" href="#/"></a>
+				</div> -->
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			
+			<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+				<nav class="link-effect-12" id="link-effect-12">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#/"><span>Home</span></a></li>
+						
+						<!-- <<<<<<<<<< Job >>>>>>>>>> -->
+						
+						<li ng-show="currentUser==''"><a href="#/search_job"><span>Job</span></a></li>
+						
+						<li ng-hide="currentUser==''">
+							<a class="dropdown-toggle" data-toggle="dropdown">Job<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li ng-show="currentUser.role=='ADMIN'"><a href="#/post_job"><span>Post Job</span></a></li>
+								<li><a href="#/search_job"><span>Search Job</span></a></li>
+								<li><a href="#/view_applied_jobs"><span>Job Applied</span></a></li>
+							</ul>
+						</li>
+											
+						<!-- <<<<<<<<<< Event >>>>>>>>>> -->
+						
+						<li ng-show="currentUser==''"><a href="#/list_event"><span>Event</span></a></li>
+						
+						<li ng-show="currentUser.role=='STUDENT'"><a href="#/list_event"><span>Event</span></a></li>
+						<li ng-show="currentUser.role=='EMPLOYEE'"><a href="#/list_event"><span>Event</span></a></li>
+						<li ng-show="currentUser.role=='ALUMNI'"><a href="#/list_event"><span>Event</span></a></li>
+						<li ng-show="currentUser.role=='ADMIN'">
+							<a class="dropdown-toggle" data-toggle="dropdown">Event<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#/create_event"><span>Post Event</span></a></li>
+								<li><a href="#/list_event"><span>Show All Events</span></a></li>
+							</ul>
+						</li>
+						
+						<!-- <<<<<<<<<< Blog >>>>>>>>>> -->
+						
+						<li ng-show="currentUser==''"><a href="#/list_blog"><span>Blog</span></a></li>
+						
+						<li ng-hide="currentUser==''"><a class="dropdown-toggle" data-toggle="dropdown">Blog
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#/create_blog"><span>Add New Blog</span></a></li>
+								<li><a href="#/list_blog"><span>Show All Blogs</span></a></li>
+							</ul>
+						</li>
+						
+						<!-- <<<<<<<<<< Forum >>>>>>>>>> -->
+						
+						<li ng-show="currentUser==''"><a href="#/list_forum"><span>Forum</span></a></li>
+						
+						<li ng-hide="currentUser==''"><a class="dropdown-toggle" data-toggle="dropdown">Forum<span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#/create_forum"><span>Add New Forum</span></a></li>
+								<li><a href="#/list_forum"><span>Show All Forums</span></a></li>
+							</ul>
+						</li>
+						
+						<!-- <<<<<<<<<< Friend >>>>>>>>>> -->
+						
+						<li ng-hide="currentUser==''"><a class="dropdown-toggle" data-toggle="dropdown">Friend<span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#/search_friend"><span>Search Friends</span></a></li>
+								<li><a href="#/view_friend_list"><span>View Friend-list</span></a></li>
+								<li><a href="#/view_friend"><span>View Friends</span></a></li>
+							</ul>
+						</li>
+						
+						<!-- <<<<<<<<<< About >>>>>>>>>> -->
+						
+						<li><a href="#/about"><span>About</span></a></li>
+						
+						<!-- <<<<<<<<<< Sign-In >>>>>>>>>> -->
+						
+						<li class="floatright" ng-show="currentUser==''"><a class="dropdown-toggle" data-toggle="dropdown">Sign In<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#/login"><span>Sign In</span></a></li>
+								<li><a href="#/register"><span>Sign Up</span></a></li>
+							</ul>
+						</li>
+						<li class="floatright" ng-hide="currentUser==''"><a href="#/logout" ng-click="ctrl.logout()"><span>Logout</span></a></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- /.navbar-collapse -->
+		</nav>
+	</div>
+	<!-- ---------------------- /navbar end -------------------------->
+
+	<!-- ------------------- content area start ---------------------->
+
+	<ng-view>
+		<!-- Different pages will appear here... -->
+	</ng-view>
+
+	<!-- ------------------- content area start ---------------------->
+
+	<!-- ---------------------- footer start ------------------------->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-bottom">
+				<div class="footer-bottom-left">
+					<p>
+						@2016. <a href="#/">.LetzChat</a>Copyright by LetzChat Pvt.Ltd.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ---------------------- /footer end ------------------------->
+
+
+
+	<!--  javascript for (angular + jquery + bootstrap)  -->
+	<script src="resources/js/angular.js"></script>
+	<script src="resources/js/angular-cookies.min.js"></script>
+	<script src="resources/js/angular-route.min.js"></script>
+	<script src="resources/js/jquery-1.11.0.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/sockjs.js"></script>
+	<script src="resources/js/stomp.js"></script>
+
+	<!-- modulewise custom javascript -->
+	<script src="resources/js/app.js"></script>
+	
+	<script src="b_home/HomeController.js"></script>
+
+	<!-- user related js files -->
+	<script src="b_user/UserController.js"></script>
+	<script src="b_user/UserService.js"></script>
+
+	<!-- blog related js files -->
+	<script src="b_blog/BlogController.js"></script>
+	<script src="b_blog/BlogService.js"></script>
+
+	<!-- friend related js files -->
+	<script src="b_friend/FriendController.js"></script>
+	<script src="b_friend/FriendService.js"></script>
+
+	<!-- job related js files -->
+	<script src="b_job/JobController.js"></script>
+	<script src="b_job/JobService.js"></script>
+	
+	<!-- forum related js files -->
+	<script src="b_forum/ForumController.js"></script>
+	<script src="b_forum/ForumService.js"></script>
+		
+	<!-- event related js files -->
+	<script src="b_event/EventController.js"></script>
+	<script src="b_event/EventService.js"></script>
+
+	<!-- chat related js files -->
+	<script src="b_chat/ChatController.js"></script>
+	<script src="b_chat/ChatService.js"></script>
+
+	<!-- about related js files -->
+	<script src="b_about/AboutController.js"></script>
+	<script src="b_about/AboutService.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div id="list-blogs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<fieldset>
+					<legend>Find Friends</legend>
+					<div class="blog-list-font">
+						<div>
+							<div class="panel panel-default" ng-repeat="user in ctrl.users"
+								style="margin-bottom: 2em;">
+								<a>
+									<div class="one">
+										<label><span style="color: black;">Friend Id : </span>{{user.id}}</label>
+									</div>
+									<div class="one">
+										<label><span style="color: black;">Name : </span>{{user.name}}</label>
+									</div> 		
+									<input type="button" ng-click="ctrl.sendFriendRequest(user.id)"
+												class="btn btn-info floatright" value="Send Request"
+												style="margin-top: 13px; width: 9em; margin-right: 8px;" />	
+								</a>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</div>

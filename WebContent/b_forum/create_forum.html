@@ -1,0 +1,30 @@
+<div id="create-blog">
+	<div class="container">
+		<div class="form-area">
+			<div class="row" style="background: linear-gradient(to right, rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.73),rgba(255, 255, 255, 0));">
+				<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+					<div ng-show='ctrl.forum.errorMessage!=""'>
+						<div class="alart alart-danger fade in">Error :
+							{{ctrl.forum.errorMessage}}</div>
+					</div>
+					<fieldset>
+						<legend>Create Forum</legend>
+						<div class="form-inner">
+							<form ng-submit="ctrl.submit()" name="myForm"
+								class="form-horizontal">
+								<div class="one">
+									<textarea type="text" name="content" required 
+										placeholder="Content of the Blog..." ng-model="ctrl.forum.description" ></textarea>
+								</div>
+								<div>
+									<input type="submit" class="btn btn-info kp-button floatright"
+										value="submit">
+								</div>
+							</form>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

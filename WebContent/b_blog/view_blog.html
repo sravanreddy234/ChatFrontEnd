@@ -1,0 +1,48 @@
+<div id="blog-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h1 class="text-uppercase" id="blog-name"><a>{{selectedBlog.title}}</a></h1>
+            <h4 style="margin-bottom: 1em;">Written By : {{selectedBlog.userId}} &nbsp;&nbsp;   On : {{selectedBlog.postDate | date}}</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div id="blog-area">
+              <h3 class="entry-title"><i class="fa fa-cube" style="width: inherit;">{{selectedBlog.reason}}</i></h3>
+              <p>{{selectedBlog.content}}</p>
+              <p class="author text-right">
+                <strong>Best regards</strong><br>
+                <small>{{selectedBlog.userId}}</small>
+              </p>
+            </div><!-- /blog-area -->
+          </div><!-- /col-md-8 -->
+          
+          
+          
+          
+          <div class="col-md-4">
+            <div class="widget">
+              <div class="minor-header"><h4><i class="fa fa-cubes"></i>&nbsp;&nbsp;Other blogs</h4></div>
+              <div class="media">
+              	<h4 class="media-heading">Media heading</h4>
+                  Cras sit amet nibh libero, in gravida nulla..
+              </div>
+              <div class="media">
+                <h4 class="media-heading">Media heading</h4>
+                  Cras sit amet nibh libero, in gravida nulla..
+              </div>
+              <div class="media">
+                <h4 class="media-heading">Media heading</h4>
+                  Cras sit amet nibh libero, in gravida nulla..
+              </div>
+              <div class="media">
+                <h4 class="media-heading">Media heading</h4>
+                  Cras sit amet nibh libero, in gravida nulla..
+                </div>
+            </div><!-- /widget -->
+          </div><!-- /col-md-4 -->
+
+        </div>
+      </div>
+    </div>

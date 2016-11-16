@@ -1,0 +1,20 @@
+<div id="view-job-details">
+	<div class="container">
+		<div class="row">
+        	<div class="col-md-8">
+        		<div class="form-group">
+        			ID : <label>{{selectedJob.id}}</label>
+        			Company Name : <label>{{selectedJob.companyName}}</label>
+        			Location : <label>{{selectedJob.location}}</label>
+        			Job Description : <label>{{selectedJob.description}}</label>
+        			Post Date : <label>{{selectedJob.date}}</label>
+        			Status : <label>{{selectedJob.status}}</label>
+        			No Of Applicants : <label>{{selectedJob.noOfApplicants}}</label>
+        			
+        			<input type="button" ng-click="ctrl.applyForJob(selectedJob.id)"
+        					class="btn btn-info kp-button" value="Apply">
+        		</div>
+          	</div>
+    	</div>
+	</div>
+</div>

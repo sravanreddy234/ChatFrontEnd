@@ -1,0 +1,51 @@
+<div id="list-blogs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<fieldset>
+					<legend>Welcome to Blog</legend>
+					<div class="blog-list-font">
+						<div ng-show="currentUser.role=='ADMIN'">
+							<div class="panel panel-default" ng-repeat="blog in ctrl.blogs"
+								ng-show="blog.status=='N'" style="margin-bottom: 2em;">
+								<a>
+									<div class="one">
+										<label><span style="color: black;">Title : </span>{{blog.title}}</label>
+									</div>
+									<div class="one">
+										<label><span style="color: black;">Written By : </span>{{blog.userId}}</label>
+									</div> 
+										<input type="button" ng-click="ctrl.rejectBlog(blog, blog.id)"
+												class="btn btn-danger floatright" value="Reject"
+												style="margin-top: 13px; width: 7em; margin-right: 8px;" /> 
+										<input	type="button" ng-click="ctrl.approveBlog(blog, blog.id)"
+												class="btn btn-info floatright" value="Approve"
+												style="margin-top: 13px; width: 7em; margin-right: 8px;" /> 
+										<input type="button" ng-click="ctrl.getSelectedBlog(blog.id)"
+												class="btn btn-success floatright" value="View"
+												style="margin-top: 13px; width: 7em; margin-right: 8px;" />
+								</a>
+							</div>
+						</div>
+						<div ng-hide="currentUser.role=='ADMIN'">
+							<div class="panel panel-default" ng-repeat="blog in ctrl.blogs"
+								ng-show="blog.status=='A'" style="margin-bottom: 2em;">
+								<a>
+									<div class="one">
+										<label><span style="color: black;">Title : </span>{{blog.title}}</label>
+									</div>
+									<div class="one">
+										<label><span style="color: black;">Written By : </span>{{blog.userId}}</label>
+									</div> 
+										<input type="button" ng-click="ctrl.getSelectedBlog(blog.id)"
+												class="btn btn-success floatright" value="View"
+												style="margin-top: 13px; width: 10em; margin-right: 8px;" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</div>
