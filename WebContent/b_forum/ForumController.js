@@ -36,7 +36,7 @@ app.controller('ForumController', [
 					self.forum = d;
 					
 					console.log("test  "+d);
-					$location.path('/view_forum');
+					//$location.path('/view_forum');
 				}, function(errResponse) {
 					console.error('Error while fetching Forum...');
 				});
@@ -53,16 +53,17 @@ app.controller('ForumController', [
 			
 			self.fetchAllForums();
 			
-			self.fetchAllForumComments = function() {
-				console.log("-->ForumController : calling fetchAllForumComments method.");
-				ForumService.fetchAllForumComments().then(function(d) {
+			self.fetchAllForumComments = function(id) {
+				console.log("-->ForumController : calling fetchAllForumComments method with id : "+ id);
+				ForumService.fetchAllForumComments(id).then(function(d) {
 					self.forumComments = d;
+					
+					self.getSelectedForum(id);
+					$location.path('/view_forum');
 				}, function(errResponse) {
 					console.error('Error while fetching ForumComments...');
 				});
 			};
-			
-			self.fetchAllForumComments();
 
 			self.createForum = function(forum) {
 				console.log("-->ForumController : calling createForum method.");
@@ -79,6 +80,7 @@ app.controller('ForumController', [
 				console.log("-->ForumController : calling createForumComment method.");
 				ForumService.createForumComment(forumComment).then(function(d) {
 					self.forumComment = d;
+					$location.path('/view_forum');
 				},
 						function(errResponse) {
 							console.error('Error while creating forumComment...');
@@ -131,20 +133,6 @@ app.controller('ForumController', [
 				}
 			};
 			
-			/*self.isMatch = function() {
-				console.log("isMatch method calling...");
-				for(var j = 0; j < self.forums.length; j++){
-					for(var k = 0; k < self.forumComments.length; k++){
-						if(self.forums[j].id === self.forumComments[k].forumId){
-							return self.forumComment;
-						}
-						else {
-							return null;
-						}						
-					}					
-				}
-			},*/
-
 			self.remove = function(id) {
 				console.log('id to be deleted', id);
 				if (self.forum.id === id) {

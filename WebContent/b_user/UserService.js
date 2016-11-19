@@ -19,6 +19,19 @@ app.factory('UserService', ['$http', '$q', '$rootScope',
 								return $q.reject(errResponse);
 							});
 			},
+			
+			searchForFriends : function() {
+				console.log("--> UserService : calling 'fetchAllUsers' method.");
+				return $http
+							.get(BASE_URL+'/searchForFriends')
+							.then(function(response) {
+								return response.data;
+							},
+							function(errResponse) {
+								console.error('Error while fetching UserDetails...');
+								return $q.reject(errResponse);
+							});
+			},
 
 			createUser : function(user) {
 				console.log("--> UserService : calling 'createUser' method.");

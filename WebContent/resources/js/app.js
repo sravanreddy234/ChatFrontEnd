@@ -73,8 +73,8 @@ app.config(function($routeProvider) {
 		controller : 'FriendController as ctrl'
 	})
 
-	.when('/view_friend_list', {
-		templateUrl : 'b_friend/view_friend_list.html',
+	.when('/new_request_list', {
+		templateUrl : 'b_friend/new_request_list.html',
 		controller : 'FriendController as ctrl'
 	})
 
@@ -121,7 +121,7 @@ app.config(function($routeProvider) {
 	 */
 	.when('/chat', {
 		templateUrl : 'b_chat/chat.html',
-		controller : 'ChatController as ctrl'
+		controller : 'ChatController'
 	})
 
 	/**

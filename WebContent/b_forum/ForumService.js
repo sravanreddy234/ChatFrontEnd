@@ -34,11 +34,13 @@ app.factory('ForumService', ['$http', '$q', '$rootScope',
 								});
 				},
 				
-				fetchAllForumComments : function() {
-					console.log("-->ForumService : calling 'fetchAllForumComments' method.");
+				fetchAllForumComments : function(id) {
+					console.log("-->ForumService : calling 'fetchAllForumComments' method for id : " + id);
 					return $http
-								.get(BASE_URL + '/forumComments')
+								.get(BASE_URL + '/forumComments/'+id)
 								.then(function(response) {
+									$rootScope.selectedForumComments = response.data;
+									
 									return response.data;
 								}, 
 								function(errResponse) {

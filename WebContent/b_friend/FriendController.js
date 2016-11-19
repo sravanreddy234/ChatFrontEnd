@@ -36,7 +36,7 @@ app.controller('FriendController', [ 'FriendService',
 			self.fetchAllUsers = function() {
 				console.log("--> FriendController : calling 'fetchAllUsers' method.");
 				UserService
-							.fetchAllUsers()
+							.searchForFriends()
 							.then(function(d) {
 								self.users = d;
 							},
@@ -44,6 +44,7 @@ app.controller('FriendController', [ 'FriendService',
 								console.error("Error while fetching users.");
 							});
 			};
+			self.fetchAllUsers();
 
 			self.getMyFriends = function() {
 				console.log("--> FriendController : calling 'getMyFriends' method.");
@@ -57,6 +58,21 @@ app.controller('FriendController', [ 'FriendService',
 									console.error("Error while fetching Friends.");
 								});
 			};
+			self.getMyFriends();
+			
+			self.getNewFriendRequests = function() {
+				console.log("--> FriendController : calling 'getNewFriendRequests' method");
+				FriendService
+								.getNewFriendRequests()
+								.then(function(d) {
+									self.friends = d;
+									console.log("Got my new friend requests");
+								},
+								function(errResponse) {
+									console.log("Error while fetching new friend requests.");
+								});
+			};
+			self.getNewFriendRequests();
 			
 			self.getSelectedFriend = function(id) {
 				console.log("--> FriendController : calling 'getSelectedFriend' method with id : " +id);
@@ -71,19 +87,6 @@ app.controller('FriendController', [ 'FriendService',
 								});
 			};
 			
-			self.getNewFriendRequests = function() {
-				console.log("--> FriendController : calling 'getNewFriendRequests' method");
-				FriendService
-								.getNewFriendRequests()
-								.then(function(d) {
-									self.friends = d;
-									console.log("Got my new friend requests");
-								},
-								function(errResponse) {
-									console.log("Error while fetching new friend requests.");
-								});
-			};
-			
 			self.sendFriendRequest = function(friendId) {
 				console.log("--> FriendController : calling 'sendFriendRequest' method with friendId : " + friendId);
 				FriendService
@@ -91,6 +94,7 @@ app.controller('FriendController', [ 'FriendService',
 								.then(function(d) {
 									self.friend = d;
 									alert("Friend request sent successfully...")
+									self.fetchAllUsers();									
 								},
 								function(errResponse) {
 									console.error("Error while fetching friends.");
@@ -98,19 +102,24 @@ app.controller('FriendController', [ 'FriendService',
 			};
 			
 			self.acceptFriend = function(friend, id) {
-				console.log("--> FriendController : calling 'acceptFriend' method.");
+				console.log("--> FriendController : calling 'acceptFriend' method with id : "+id);
+				console.log("--> FriendController",self.friend);
 				FriendService
-								.updateFriendRequest(friend, id)
-								.then(self.fetchAllFriends,
+								.acceptFriend(friend, id)
+								.then(function(d) {
+									self.friend = d;
+									alert('friend accepted...');
+								},
 								function(errResponse) {
 									console.error("Error while updating friend.");
 								});
 			};
 			
 			self.rejectFriend = function(friend, id) {
-				console.log("--> FriendController : calling 'rejectFriend' method.");
+				console.log("--> FriendController : calling 'rejectFriend' method with id : "+id);
+				console.log("--> FriendController",self.friend);
 				FriendService
-								.updateFriendRequest(friend, id)
+								.rejectFriend(friend, id)
 								.then(self.fetchAllFriends,
 								function(errResponse) {
 									console.error("Error while updating friend.");
@@ -118,16 +127,14 @@ app.controller('FriendController', [ 'FriendService',
 			};
 			
 			self.unFriend = function(friend, id) {
-				console.log("--> FriendController : calling 'unFriend' method.");
+				console.log("--> FriendController : calling 'unFriend' method with id : "+id);
+				console.log("--> FriendController",self.friend);
 				FriendService
-								.updateFriendRequest(friend, id)
+								.unFriend(friend, id)
 								.then(self.fetchAllFriends,
 								function(errResponse) {
 									console.error("Error while updating friend.");
 								});
-			};	
-			
-			self.fetchAllUsers();
-			self.getMyFriends();
+			};			
 			
 		}]);

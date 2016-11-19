@@ -1,20 +1,52 @@
 <div id="view-job-details">
-	<div class="container">
-		<div class="row">
-        	<div class="col-md-8">
-        		<div class="form-group">
-        			ID : <label>{{selectedJob.id}}</label>
-        			Company Name : <label>{{selectedJob.companyName}}</label>
-        			Location : <label>{{selectedJob.location}}</label>
-        			Job Description : <label>{{selectedJob.description}}</label>
-        			Post Date : <label>{{selectedJob.date}}</label>
-        			Status : <label>{{selectedJob.status}}</label>
-        			No Of Applicants : <label>{{selectedJob.noOfApplicants}}</label>
+      <div class="container">
+      
+      	<div class="row">
+			<div class="col-md-8">
+            <h1 class="text-uppercase" id="job-id">Job Id : <a>{{selectedJob.id}}</a></h1>
+            <h4 style="margin-bottom: 1em;">Post Date : {{selectedJob.date | date}}</h4>
+          </div>
+      	</div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="blog-area">
+        			Company Name : <label>{{selectedJob.companyName}}</label><br>
+        			Location : <label>{{selectedJob.location}}</label><br>
+        			Job Description : <label>{{selectedJob.description}}</label><br>
+        			Post Date : <label>{{selectedJob.date | date}}</label><br>
+        			Status : <label>{{selectedJob.status}}</label><br>
+        			No Of Applicants : <label>{{selectedJob.noOfApplicants}}</label><br>
         			
-        			<input type="button" ng-click="ctrl.applyForJob(selectedJob.id)"
-        					class="btn btn-info kp-button" value="Apply">
+        			<!-- <input type="button" ng-click="ctrl.applyForJob(job)"
+        					class="btn btn-info kp-button" value="Apply"> -->
         		</div>
-          	</div>
-    	</div>
-	</div>
-</div>
+          </div><!-- /col-md-8 -->
+          
+          
+          
+          
+          <div class="col-md-4">
+            <div class="widget">
+              <div class="minor-header"><h4><i class="fa fa-cubes"></i>&nbsp;&nbsp;Other blogs</h4></div>
+              <div class="media">
+              	<h4 class="media-heading">Media heading</h4>
+                  Cras sit amet nibh libero, in gravida nulla..
+              </div>
+              <div class="media">
+                <h4 class="media-heading">Media heading</h4>
+                  Cras sit amet nibh libero, in gravida nulla..
+              </div>
+              <div class="media">
+                <h4 class="media-heading">Media heading</h4>
+                  Cras sit amet nibh libero, in gravida nulla..
+              </div>
+              <div class="media">
+                <h4 class="media-heading">Media heading</h4>
+                  Cras sit amet nibh libero, in gravida nulla..
+                </div>
+            </div><!-- /widget -->
+          </div><!-- /col-md-4 -->
+
+        </div>
+      </div>
+    </div>

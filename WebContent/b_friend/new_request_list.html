@@ -1,0 +1,35 @@
+<div id="list-blogs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+
+				<fieldset>
+					<legend>New Friend Requests</legend>
+					<div class="blog-list-font">
+						<div ng-show="currentUser !=''">
+							<div class="panel panel-default" ng-repeat="friend in newRequest" 
+									 ng-show="friend.status='N'" style="margin-bottom: 2em;">
+								<a>
+									<div class="one">
+										<label><span>Friend Id : </span>{{friend.userId}}</label>
+									</div>
+									<div class="one">
+										<label><span>Friend Id : </span>{{friend.friendId}}</label>
+									</div>
+									<input type="button" class="btn btn-info floatright" value="Accept"
+										style="margin-top: 13px; margin-bottom: 3em; width: 9em; margin-right: 8px;"
+										ng-click="ctrl.acceptFriend(friend, friend.id)" />
+									<input type="button" class="btn btn-info floatright" value="Reject"
+										style="margin-top: 13px; margin-bottom: 3em; width: 9em; margin-right: 8px;"
+										ng-click="ctrl.rejectFriend(friend, friend.id)" />
+								</a>								
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	
+	
+	

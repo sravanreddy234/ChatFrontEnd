@@ -36,6 +36,7 @@ app.factory('FriendService', ['$http', '$q', '$rootScope',
 					console.log("--> FriendService : calling 'getNewFriendRequests' method.");
 					return $http.get(BASE_URL+'/newFriendRequests').then(
 							function(response) {
+								$rootScope.newRequest = response.data;
 								return response.data;
 							},
 							function(errResponse) {
@@ -57,8 +58,8 @@ app.factory('FriendService', ['$http', '$q', '$rootScope',
 				},
 				
 				acceptFriend : function(friend, id) {
-					console.log("--> FriendService : calling 'acceptFriend' method.");
-					return $http.put(BASE_URL+'/acceptFriend/'+friend.id).then(
+					console.log("--> FriendService : calling 'acceptFriend' method with id : "+id);
+					return $http.put(BASE_URL+'/acceptFriend/'+id, friend).then(
 							function(response) {
 								return response.data;
 							},
@@ -68,8 +69,8 @@ app.factory('FriendService', ['$http', '$q', '$rootScope',
 				},
 				
 				rejectFriend : function(friend, id) {
-					console.log("--> FriendService : calling 'rejectFriend' method.");
-					return $http.put(BASE_URL+'/rejectFriend/'+friend.id).then(
+					console.log("--> FriendService : calling 'rejectFriend' method with id : "+id);
+					return $http.put(BASE_URL+'/rejectFriend/'+id, friend).then(
 							function(response) {
 								return response.data;
 							},
@@ -79,8 +80,8 @@ app.factory('FriendService', ['$http', '$q', '$rootScope',
 				},
 				
 				unFriend : function(friend, id) {
-					console.log("--> FriendService : calling 'unFriend' method.");
-					return $http.put(BASE_URL+'/unFriend/'+friend.id).then(
+					console.log("--> FriendService : calling 'unFriend' method with id : "+id);
+					return $http.put(BASE_URL+'/unFriend/'+id, friend).then(
 							function(response) {
 								return response.data;
 							},

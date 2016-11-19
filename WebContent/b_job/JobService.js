@@ -36,7 +36,7 @@ app.factory('JobService', ['$http', '$q', '$rootScope',
 			updateJob : function(job, id) {
 				console.log("-->JobService : calling 'updateJob' method.");
 				return $http
-							.put(BASE_URL+'/job/'+job.id)
+							.put(BASE_URL+'/job/'+id)
 							.then(function(response) {
 								return response.data;
 							},
@@ -76,8 +76,9 @@ app.factory('JobService', ['$http', '$q', '$rootScope',
 			getMyAppliedJobs : function() {
 				console.log("-->JobService : calling 'getMyAppliedJobs' method");
 				return $http
-							.get(BASE_URL+'/getMyAppliedJobs/')
+							.get(BASE_URL+'/getMyAppliedJobs')
 							.then(function(response) {
+								$rootScope.getAppliedJob = response.data;
 								return response.data;
 							},
 							function(errResponse) {
@@ -125,10 +126,10 @@ app.factory('JobService', ['$http', '$q', '$rootScope',
 							});
 			},
 
-			applyForJob : function(jobId) {
-				console.log("-->JobService : calling 'applyForJob' method for jobId : "+jobId);
+			applyForJob : function(job) {
+				console.log("-->JobService : calling 'applyForJob' method.", self.job);
 				return $http
-							.post(BASE_URL+'/jobApplied')
+							.post(BASE_URL+'/jobApplied', job)
 							.then(function(response) {
 								return response.data;
 							},

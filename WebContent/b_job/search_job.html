@@ -18,8 +18,11 @@
 									<div class="one">
 										<label><span style="color: black;">Job Location : </span>{{job.location}}</label>
 									</div> 	
-									<input type="button" ng-click="ctrl.applyForJob(jobId)"
+									<input type="button" ng-hide="currentUser==''" ng-click="ctrl.applyForJob(job)"
 												class="btn btn-info floatright" value="Apply Now"
+												style="margin-top: 13px; width: 10em; margin-right: 8px;" />
+									<input type="button" ng-click="ctrl.getJob(job.id)"
+												class="btn btn-info floatright" value="View Details"
 												style="margin-top: 13px; width: 10em; margin-right: 8px;" />	
 								</a>
 							</div>

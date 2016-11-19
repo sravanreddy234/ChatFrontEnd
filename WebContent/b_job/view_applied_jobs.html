@@ -6,8 +6,8 @@
 					<legend>Find Jobs</legend>
 					<div class="blog-list-font">
 						<div>
-							<div class="panel panel-default" ng-repeat="job in ctrl.jobs"
-								ng-show="currentUser=='jobApplication.userId'" style="margin-bottom: 2em;">
+							<div class="panel panel-default" ng-repeat="job in getAppliedJob"
+								style="margin-bottom: 2em;">
 								<a>
 									<div class="one">
 										<label><span>Job ID : </span>{{job.id}}</label>
@@ -18,11 +18,11 @@
 									<div class="one">
 										<label><span>Job Location : </span>{{job.location}}</label>
 									</div>
-									<div class="one">
+									<!-- <div class="one">
 										<label ng-show="jobApplication.status=='A'">Job Status : Applied</label>
 										<label ng-show="jobApplication.status=='R'">Job Status : Rejected</label>
 										<label ng-show="jobApplication.status=='C'">Job Status : Call for Interview</label>
-									</div> 
+									</div> --> 
 								</a>
 							</div>
 						</div>

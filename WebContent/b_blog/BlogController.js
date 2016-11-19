@@ -76,6 +76,7 @@ app.controller('BlogController', [
 			
 			self.approveBlog = function(blog, id) {
 				console.log("-->BlogController : calling approveBlog() method : getting blog with id : " + id);
+				console.log("-->BlogController",self.blog);
 				BlogService.approveBlog(blog, id).then(
 						self.fetchAllBlogs,
 						function(errResponse) {
@@ -85,6 +86,7 @@ app.controller('BlogController', [
 
 			self.rejectBlog = function(blog, id) {
 				console.log("-->BlogController : calling rejectBlog() method : getting blog with id : " + id);
+				console.log("-->BlogController",self.blog);
 				BlogService.rejectBlog(blog, id).then(
 						self.fetchAllBlogs,
 						function(errResponse) {

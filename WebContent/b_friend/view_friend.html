@@ -7,17 +7,17 @@
 					<div class="blog-list-font">
 						<div>
 							<div class="panel panel-default" ng-repeat="friend in ctrl.friends"
-								style="margin-bottom: 2em;">
+									style="margin-bottom: 2em;">
 								<a>
-									<div class="one">
-										<label><span>Friend Id : </span>{{friend.friendId}}</label>
+									<div class="one" ng-show="friend.userId==currentUser.id">
+										<label>{{friend.friendId}}</label>										
+									</div>
+									<div class="one" ng-show="friend.userId!=currentUser.id">
+										<label>{{friend.userId}}</label>										
 									</div>
 									<div class="one" ng-show="friend.status=='A'">
 										<label><span>Status : </span>Friend</label>
 									</div> 
-									<input type="button" ng-click=""
-												class="btn btn-info floatright" value="Send Message"
-												style="margin-top: 13px; width: 9em; margin-right: 8px;" />
 								</a>
 							</div>
 						</div>
