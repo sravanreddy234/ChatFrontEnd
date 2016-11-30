@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 app.factory('ForumService', ['$http', '$q', '$rootScope',
 		function($http, $q, $rootScope) {
