@@ -1,7 +1,7 @@
 <div id="create-blog">
 	<div class="container">
 		<div class="form-area">
-			<div class="row">
+			<div class="row y-row">
 				<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 					<div ng-show='ctrl.blog.errorMessage!=""'>
 						<div class="alart alart-danger fade in">Error :
@@ -21,7 +21,7 @@
 										placeholder="Why this blog ?"  ng-model="ctrl.blog.reason" >
 								</div>
 								<div class="one">
-									<textarea type="text" name="content" required pattern=".{50,1000}"
+									<textarea type="text" name="content" required pattern=".{50,2500}"
 										placeholder="Content of the Blog..." ng-model="ctrl.blog.content" ></textarea>
 								</div>
 								<div>

@@ -1,19 +1,46 @@
 <div id="chat-page">
 	<div class="container">
-		<div class="row">
-		
-			<div class="col-md-8"  >
-				<form ng-submit="addMessage()" name="messageForm">
-					<input type="text" placeholder="Write your message here..." ng-model="message" />
-					<div class="info">
-						<span class="count" ng-bind="max - message.length" ng-class="{danger:message.length >max}"></span>
-						<button ng-disabled="message.length > max || message.length === 0" >Send</button>
-					</div>
-				</form>
-				<p ng-repeat="message in messages | orderBy:'time':'true'" class="message">
-					<time>{{message.dateTime | dateTime:'HH:mm'}}</time>
-					<span ng-class="{self: message.self}">{{message.message}}</span>
-				</p>
+		<div class="form-area">
+			<div class="row y-row">
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 conversation-area">
+					<fieldset>
+						<legend>Chat Box</legend>
+						<div class="form-inner">
+							 <form ng-submit="addMessage()" name="messageForm"
+									class="form-horizontal">								
+								<div class="one">
+									<textarea placeholder="Write your message here..." rows="3"
+										ng-model="message" style="height: inherit;" autofocus >
+									</textarea>								
+									<div>
+										<input type="submit" class="btn btn-info chat-send floatright fa fa-paper-plane"
+											value="Send" ng-disabled="message.length > max || message.length === 0" />
+										<a class="max-char">max chars : 140  <span class="count" ng-bind="max - message.length"
+											ng-class="{danger:message.length >max}"> </span></a>									
+									</div>								
+								</div>
+								<div class="content-wrap messages">
+									<div class="msg message" ng-repeat="message in messages | orderBy:'time':'true'" style="text-align: left;">
+										<div class="msg-area" >
+											<div class="chat-line" ng-if="(($index + 1) % 8==0)?true:false" style="text-align: left">
+												<!-- <time>{{message.time | time:'HH:mm'}}</time> -->	
+											  	
+											  	<span class="chat-time" ng-class="{self: message.self}" style="text-align: right; color: #6b6b6b;"><i class="fa fa-clock-o"></i>  {{message.time | date:'HH:mm'}} :  </span>
+     											<span class="chat-desc" ng-class="{self: message.self}">{{message.message}}</span>
+     										</div>
+										</div>
+									</div>
+								</div>								
+							</form>
+							
+						<!-- <p ng-repeat="message in messages | orderBy:'time':'true'" class="message">
+								<time>{{message.dateTime | dateTime:'HH:mm'}}</time>
+								<span ng-class="{self: message.self}">{{message.message}}</span>
+							</p> -->
+
+						</div>
+					</fieldset>
+				</div>
 			</div>
 		</div>
 	</div>

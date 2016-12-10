@@ -1,29 +1,33 @@
-<div id="list-blogs">
+<div class="blogs">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<fieldset>
-					<legend>Find Friends</legend>
-					<div class="blog-list-font">
-						<div>
-							<div class="panel panel-default" ng-repeat="user in ctrl.users"
-								style="margin-bottom: 2em;">
-								<a>
-									<div class="one">
-										<label><span style="color: black;">Friend Id : </span>{{user.id}}</label>
-									</div>
-									<div class="one">
-										<label><span style="color: black;">Name : </span>{{user.name}}</label>
-									</div> 		
-									<input type="button" ng-click="ctrl.sendFriendRequest(user.id)"
-												class="btn btn-info floatright" value="Send Request"
-												style="margin-top: 13px; width: 9em; margin-right: 8px;" />	
-								</a>
+		<div class="blog-all-grids">
+			
+			<div>
+				<div class="col-md-4 blogs-grid" ng-repeat="user in ctrl.users" >
+					<div class="blog-all">
+						<div class="blog-all-sub frame">
+							<h3>{{user.name}}</h3>
+							<p style="text-align: center;">{{user.id}}</p>
+							<div class="more">
+								<input type="button" class="btn btn-info btn-more"
+									ng-click="ctrl.sendFriendRequest(user.id)" value="Send Request"
+									style="background: linear-gradient(to bottom right, #6f6f6f, #60d059);">
 							</div>
 						</div>
+						<div class="p-mask">
+							<h4>
+								<a><span>>></span>{{user.name}}</a>
+							</h4>
+							<ul>
+								<li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
 					</div>
-				</fieldset>
+				</div>
 			</div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 </div>

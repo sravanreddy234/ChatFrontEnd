@@ -1,52 +1,61 @@
 <div id="view-job-details">
-      <div class="container">
-      
-      	<div class="row">
+	<div class="container">
+		<div class="row" style="margin-top: 2em;">
 			<div class="col-md-8">
-            <h1 class="text-uppercase" id="job-id">Job Id : <a>{{selectedJob.id}}</a></h1>
-            <h4 style="margin-bottom: 1em;">Post Date : {{selectedJob.date | date}}</h4>
-          </div>
-      	</div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="blog-area">
-        			Company Name : <label>{{selectedJob.companyName}}</label><br>
-        			Location : <label>{{selectedJob.location}}</label><br>
-        			Job Description : <label>{{selectedJob.description}}</label><br>
-        			Post Date : <label>{{selectedJob.date | date}}</label><br>
-        			Status : <label>{{selectedJob.status}}</label><br>
-        			No Of Applicants : <label>{{selectedJob.noOfApplicants}}</label><br>
-        			
-        			<!-- <input type="button" ng-click="ctrl.applyForJob(job)"
+				<h1 class="text-uppercase" id="x-name">Job Id : <a style="color: #efefef; text-decoration: none;">{{selectedJob.id}}</a></h1>
+				<h4 class="forum-top" style="margin-bottom: 1em; font-size: 30px;">{{selectedJob.companyName}} off-campus drive</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8" style="padding: 2em;margin-bottom: 2em;">
+				<div id="x-area">
+					<p class="x-padding"><span class="x-span">Company Name : </span>{{selectedJob.companyName}}</p>
+					<p class="x-padding"><span class="x-span">Location : </span>{{selectedJob.location}}</p>
+					<p class="x-padding"><span class="x-span">Job Description : </span>{{selectedJob.description}}</p>
+					<p class="x-padding"><span class="x-span">Post Date : </span>{{selectedJob.date | date}}</p>
+					<p class="x-padding"><span class="x-span">Status : </span>{{selectedJob.status}}</p>
+					<p class="x-padding"><span class="x-span">No Of Applicants : </span>{{selectedJob.noOfApplicants}}</p>
+					
+					<!-- <input type="button" ng-click="ctrl.applyForJob(job)"
         					class="btn btn-info kp-button" value="Apply"> -->
-        		</div>
-          </div><!-- /col-md-8 -->
-          
-          
-          
-          
-          <div class="col-md-4">
-            <div class="widget">
-              <div class="minor-header"><h4><i class="fa fa-cubes"></i>&nbsp;&nbsp;Other blogs</h4></div>
-              <div class="media">
-              	<h4 class="media-heading">Media heading</h4>
-                  Cras sit amet nibh libero, in gravida nulla..
-              </div>
-              <div class="media">
-                <h4 class="media-heading">Media heading</h4>
-                  Cras sit amet nibh libero, in gravida nulla..
-              </div>
-              <div class="media">
-                <h4 class="media-heading">Media heading</h4>
-                  Cras sit amet nibh libero, in gravida nulla..
-              </div>
-              <div class="media">
-                <h4 class="media-heading">Media heading</h4>
-                  Cras sit amet nibh libero, in gravida nulla..
-                </div>
-            </div><!-- /widget -->
-          </div><!-- /col-md-4 -->
+				</div>
+			</div>
+			<!-- /col-md-8 -->
 
-        </div>
-      </div>
-    </div>
+
+
+
+			<div class="col-md-4 box" style="transform: rotate(15deg);">
+				<div class="ribbon">
+					<span>POPULAR</span>
+				</div>
+				<div class="widget">
+					<div class="minor-header">
+						<h4>
+							<i class="fa fa-cubes fa-fw"></i> Other forums
+						</h4>
+					</div>
+					<div class="media">
+						<h4 class="media-heading">Media heading</h4>
+						Cras sit amet nibh libero, in gravida nulla..
+					</div>
+					<div class="media">
+						<h4 class="media-heading">Media heading</h4>
+						Cras sit amet nibh libero, in gravida nulla..
+					</div>
+					<div class="media">
+						<h4 class="media-heading">Media heading</h4>
+						Cras sit amet nibh libero, in gravida nulla..
+					</div>
+					<div class="media">
+						<h4 class="media-heading">Media heading</h4>
+						Cras sit amet nibh libero, in gravida nulla..
+					</div>
+				</div>
+				<!-- /widget -->
+			</div>
+			<!-- /col-md-4 -->
+
+		</div>
+	</div>
+</div>

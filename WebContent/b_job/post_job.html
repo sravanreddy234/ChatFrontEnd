@@ -1,22 +1,22 @@
 <div id="post_job">
 	<div class="container">
 		<div class="form-area">
-			<div class="row">
+			<div class="row y-row">
 				<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 					<fieldset>
 						<legend>Post Job</legend>
 						<div class="form-inner">
 							<form ng-submit="ctrl.submit()" class="form-horizontal" name="myForm">
 								<div class="one">
-									<input ng-model="ctrl.job.companyName" type="text" required
+									<input ng-model="ctrl.job.companyName" type="text" required pattern=".{5,50}"
 										placeholder="Company Name">
 								</div>
 								<div class="one">
-									<input ng-model="ctrl.job.location" type="text" required
+									<input ng-model="ctrl.job.location" type="text" required pattern=".{5,25}"
 										placeholder="Location" />
 								</div>
 								<div class="one">
-									<textarea ng-model="ctrl.job.description" type="text" rows="5" required
+									<textarea ng-model="ctrl.job.description" type="text" rows="5" required pattern=".{50,2500}"
 										placeholder="Job Description..."></textarea>
 								</div>
 								<div>

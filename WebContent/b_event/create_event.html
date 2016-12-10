@@ -1,11 +1,8 @@
 <div id="create-event">
 	<div class="container">
 		<div class="form-area">
-			<div class="row">
+			<div class="row y-row">
 				<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-					<!-- <div ng-show='ctrl.event.errorMessage!=""'>
-						<div class="alart alart-danger fade in">Error :	{{ctrl.event.errorMessage}}</div>
-					</div> -->
 					<fieldset>
 						<legend>Post Event</legend>
 						<div class="form-inner">
@@ -16,11 +13,11 @@
 										placeholder="Title of the Event..." ng-model="ctrl.event.name">
 								</div>
 								<div class="one">
-									<input type="text" required pattern=".{5,25}"
+									<input type="text" required pattern=".{5,25}" 
 										placeholder="Event Location"  ng-model="ctrl.event.venue" >
 								</div>
 								<div class="one">
-									<textarea type="text" required pattern=".{50,1500}"
+									<textarea type="text" required pattern=".{50,2500}"
 										placeholder="Description of the Event..." ng-model="ctrl.event.description" ></textarea>
 								</div>
 								<div>

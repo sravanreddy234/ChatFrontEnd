@@ -27,30 +27,31 @@
     };
     
     var reconnect = function() {
-      $timeout(function() {
+    	$timeout(function() {
         initialize();
-      }, this.RECONNECT_TIMEOUT);
+      }, 
+      this.RECONNECT_TIMEOUT);
     };
     
     var getMessage = function(data) {
-      var message = JSON.parse(data), out = {};
-      out.message = message.message;
-      out.time = new Date(message.time);
+    	var message = JSON.parse(data), out = {};
+    	out.message = message.message;
+    	out.time = new Date(message.time);	//*****
          
       return out;
     };
     
     var startListener = function() {
-      socket.stomp.subscribe(service.CHAT_TOPIC, function(data) {
+    	socket.stomp.subscribe(service.CHAT_TOPIC, function(data) {
         listener.notify(getMessage(data.body));
       });
     };
     
     var initialize = function() {
-      socket.client = new SockJS('/Binder/chat');
-      socket.stomp = Stomp.over(socket.client);
-      socket.stomp.connect({}, startListener);
-      socket.stomp.onclose = reconnect;
+    	socket.client = new SockJS('/Binder/chat');
+    	socket.stomp = Stomp.over(socket.client);
+    	socket.stomp.connect({}, startListener);
+    	socket.stomp.onclose = reconnect;
     };
     
     initialize();

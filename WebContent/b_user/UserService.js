@@ -81,7 +81,10 @@ app.factory('UserService', ['$http', '$q', '$rootScope',
 									$rootScope.currentUser = {
 											name: response.data.name,
 											id: response.data.id,
-											role: response.data.role
+											role: response.data.role,
+											email:response.data.email,
+											phone:response.data.phone,
+											gender:response.data.gender
 									};
 								}
 								return response.data;

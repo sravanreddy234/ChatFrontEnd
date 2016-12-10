@@ -155,6 +155,8 @@ app.controller('JobController', ['JobService', '$scope', '$location', '$rootScop
 							self.jobApplication = d;
 							alert("You have successfully applied for the job...");
 							self.listJobs();
+							console.log("-->JObController : ", self.jobApplication);
+							console.log("-->JObController : ", self.job);
 						},
 						function(errResponse) {
 							console.error('Error while applying for job...')

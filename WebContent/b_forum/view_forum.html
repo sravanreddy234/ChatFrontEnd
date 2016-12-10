@@ -2,13 +2,13 @@
       <div class="container">
         <div class="row" style="margin-top: 2em;">
           <div class="col-md-8">
-            <h1 class="text-uppercase" id="forum-name"><a style="color: #efefef; text-decoration: none;">Forum</a></h1>
-            <h4>Written By : {{selectedForum.userId}} &nbsp;&nbsp;   On {{selectedForum.postDate | date}}</h4>
+            <h1 class="text-uppercase" id="x-name"><a style="color: #efefef; text-decoration: none;">Forum</a></h1>
+            <h4 class="forum-top">Written By : {{selectedForum.userId}} &nbsp;&nbsp;   On {{selectedForum.postDate | date}}</h4>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-8" style="padding: 2em;">
-            <div id="forum-area">
+          <div class="col-md-8 forum-head" style="padding: 2em;">
+            <div id="x-area">
               <p>{{selectedForum.description}}</p>
               <p class="author text-right">
                 <strong>Best regards</strong>
@@ -41,15 +41,15 @@
 							<legend></legend>
 							<h3>Leave a <span style="color: #337ab7;">Comment</span></h3>
 							<div class="form-inner">
-								<form ng-submit="ctrl.comment()" name="myForm"
+								<form  name="myForm"
 									class="form-horizontal">
 									<div class="one">
 										<textarea type="text" required placeholder="Write your comment here..." 
 												ng-model="ctrl.forumComment.comment" ></textarea>
 									</div>
 									<div>
-										<input type="submit" class="btn btn-info kp-button floatright"
-											value="submit">
+										<input type="button" class="btn btn-info kp-button floatright" 
+											ng-click="ctrl.createForumComment(ctrl.forumComment, selectedForum.id)"	value="submit">
 									</div>
 								</form>
 							</div>

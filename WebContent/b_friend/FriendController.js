@@ -109,6 +109,7 @@ app.controller('FriendController', [ 'FriendService',
 								.then(function(d) {
 									self.friend = d;
 									alert('friend accepted...');
+									self.getNewFriendRequests();
 								},
 								function(errResponse) {
 									console.error("Error while updating friend.");
@@ -120,7 +121,11 @@ app.controller('FriendController', [ 'FriendService',
 				console.log("--> FriendController",self.friend);
 				FriendService
 								.rejectFriend(friend, id)
-								.then(self.fetchAllFriends,
+								.then(function(d) {
+									self.friend = d;
+									alert('friend request rejected successfully...');
+									self.getNewFriendRequests();
+								},
 								function(errResponse) {
 									console.error("Error while updating friend.");
 								});
@@ -131,7 +136,10 @@ app.controller('FriendController', [ 'FriendService',
 				console.log("--> FriendController",self.friend);
 				FriendService
 								.unFriend(friend, id)
-								.then(self.fetchAllFriends,
+								.then(function(d) {
+									self.friend = d;
+									self.getMyFriends();
+								},
 								function(errResponse) {
 									console.error("Error while updating friend.");
 								});

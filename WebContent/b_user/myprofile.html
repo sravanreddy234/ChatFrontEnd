@@ -1,0 +1,53 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 pro-header">
+			<div class="profile-banner">
+				<div class="profile-table frameone">
+					<table id="vertical-1">
+						<tr>
+							<th>ID</th>
+							<td>:</td>
+							<td id="td-data">{{currentUser.id}}</td>
+						</tr>
+						<tr>
+							<th>Name</th>
+							<td>:</td>
+							<td>{{currentUser.name}}</td>
+						</tr>
+						<tr>
+							<th>Gender</th>
+							<td>:</td>
+							<td>{{currentUser.gender}}</td>
+						</tr>
+						<tr>
+							<th>Email id</th>
+							<td>:</td>
+							<td>{{currentUser.email}}</td>
+						</tr>
+						<tr>
+							<th>Phone No.</th>
+							<td>:</td>
+							<td>{{currentUser.phone}}</td>
+						</tr>
+						<tr>
+							<th>Role in Binder</th>
+							<td>:</td>
+							<td>{{currentUser.role}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<figure class="profile-picture"
+				style="background-image: url('https://thingsofamber.files.wordpress.com/2014/03/user-grey-01.png')">
+			</figure>
+
+			<div class="profile-stats">
+				<ul>
+					<li>{{currentUser.name}}</li>
+				</ul>
+				<a href="#" class="follow"> Follow {{currentUser.name}} </a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -6,15 +6,21 @@ html,
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background: url(http://wallpaper.zone/img/3711224.jpg) no-repeat center center fixed; 
+  background: url(http://www.planwallpaper.com/static/images/wallpaper-hd-3151.jpg) no-repeat center center fixed; 
   background-size: cover;
-  
   height: 100%;
   color: black;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5); 
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~|| body || header || footer ||~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.a-hover:hover {
+	font-size: x-large;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #6d6d6d;
+    text-shadow: 2px 2px 4px white;
+}
 .navbar-default {
 	background: #fff;
 	border: none;
@@ -58,9 +64,9 @@ html,
 }
 
 nav.navbar.navbar-default.navbar-fixed-top {
-	background: rgba(255, 255, 255, 0.75);
-    box-shadow: inset 0 0 16px rgba(0,0,0,.5);
+	box-shadow: inset 0 0 16px rgb(236, 217, 174);
     height: 95px;
+    background: linear-gradient(rgba(245, 222, 179, 0.41),wheat,rgba(245, 222, 179, 0.53));
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
@@ -80,7 +86,7 @@ nav.navbar.navbar-default.navbar-fixed-top {
 	padding: 5px 40px;
 }
 ul.dropdown-menu {
-    background-color: rgba(158, 158, 158, 0.61);
+    background-color: rgba(245, 222, 179, 0.8);
 }
 
 .link-effect-12 a {
@@ -422,7 +428,11 @@ a:hover {
  * Home
  */
 .home {
-  padding: 0 20px;
+	padding: 40px;
+    background: linear-gradient(to bottom right, wheat, rgba(255, 255, 0, 0), rgba(255, 255, 0, 0), wheat);
+    font-family: -webkit-pictograph;
+    border-radius: 13px;
+    background-color: rgba(255, 255, 255, 0.65);
 }
 .home .btn-lg {
   padding: 10px 20px;
@@ -591,8 +601,11 @@ textarea {
 	width: 100%;
 }
 .col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2 {
-	background: linear-gradient(to right, rgba(0, 0, 0, 0.54),white,rgba(0, 0, 0, 0.54));
 	padding: 2em 2em 3em 2em;
+    background: linear-gradient(to bottom right, wheat, rgba(255, 255, 0, 0), rgba(255, 255, 0, 0), wheat);
+    background-color: rgba(255, 255, 255, 0.65);
+    font-family: -webkit-pictograph;
+    border-radius: 13px;
 }
 /* ~~~~~~~~~~~~~ registration and login page end ~~~~~~~~~~~~~ */
 
@@ -620,7 +633,7 @@ textarea {
 }
 .widget{
   padding: 2px 10px 10px;
-  background-color: whitesmoke;
+  background-color: rgba(245, 222, 179, 0.63);
   -webkit-box-shadow: 0 0 10px -2px rgba(0,0,0,0.2);
    box-shadow: 0 0 10px -2px rgba(0,0,0,0.2);
 }
@@ -691,26 +704,60 @@ div#forum-page {
     margin-bottom: 5em;
 }
 .comment-zone{
-	background: linear-gradient(to right, rgba(140, 140, 140, 0.35) , rgba(255, 255, 255, 0));
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.62) , rgba(255, 255, 255, 0));
     margin-top: 3em;
 }
 .col-xs-10.recent-comment-grid-right {
     margin: 7px 15px;
-        background: linear-gradient(to right, rgba(53, 53, 53, 0.35), rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0));
 }
-#forum-area{
+.forum-head{
+	background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.92), rgba(0, 0, 0, 0));
+}
+.forum-top{
+	padding: 7px;
+    border-radius: 15px;
+    background: linear-gradient(to right, rgba(245, 222, 179, 0), wheat, rgba(245, 222, 179, 0));
+}
+#x-area{
 	background: linear-gradient(to right, rgba(140, 140, 140, 0.35) , rgba(255, 255, 255, 0));
 	padding: 1em;
 }
-h1#forum-name {
+h1#x-name {
     margin-bottom: 1em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(239, 218, 143, 0.78),rgba(255, 255, 255, 0));
 }
-h1#forum-name {
-    margin-bottom: 1em;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.15),rgba(255, 255, 255, 0));
+.x-padding{
+	    padding: 4px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 2px black;
 }
-
-
+.x-span{
+	font-size: 20px;
+    font-weight: 700;
+    font-variant: small-caps;
+    color: rgb(234, 234, 234);
+}
+.x-legend{
+	margin-bottom: 1em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.45),rgba(255, 255, 255, 0));
+    font-size: 37px;
+    text-transform: uppercase;
+    font-family: -webkit-body;
+    color: #e9eaea;
+}
+.x-panel{
+	padding: 5px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.35), rgb(255, 255, 255),rgba(0, 0, 0, 0.35),rgba(255, 255, 255, 0));
+    border: none;
+}
+.x-row{
+	background-color: rgba(0, 0, 0, 0.47);
+}
+.y-row{
+	 background: linear-gradient(to right, rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.73),rgba(255, 255, 255, 0));
+}
 
 
 
@@ -719,6 +766,85 @@ h1#forum-name {
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /Forum ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Chat ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.conversation-area{
+    height: 100%;
+    padding: 2em;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.14),rgba(255, 255, 255, 0.96),rgba(0, 0, 0, 0.14));
+    padding-top: 1em;
+}
+.chat-header {
+    height: 100%;
+    width: 100%;
+    background: deepskyblue;
+    box-shadow: 0 1px 1px;
+    display: table;
+}
+.chat-header h4 {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.chat-row{
+    height:3em;
+}
+.content-wrap {
+    overflow: auto;
+    width: 100%;
+    height: 19em;
+    background: white;
+    padding: 0 1em 0 1em;
+    margin-top: 1em;
+    border-radius: 3px;
+}
+.chat-time{
+	text-align: right;
+    color: #6b6b6b;
+    background-color: beige;
+    padding: 5px;
+    border-radius: 15px;
+}
+.chat-line{
+	text-align: left;
+    padding: 4px;
+    margin-top: 1em;
+    background-color: #bfbfbf;
+    border-radius: 15px;
+}
+.chat-desc{
+	background: linear-gradient(to right, beige, rgba(255, 255, 255, 0));
+    padding: 5px;
+    border-radius: 15px;
+    margin-left: 2px;
+}
+.max-char{
+    background-color: beige;
+    border-radius: 15px;
+    padding: 5px;
+    color: #8c8c8c;
+}
+.count{
+    background: rgb(165, 165, 165);
+    color: beige;
+    padding: 3px;
+    border-radius: 15px;
+}
+.chat-send{
+	width: 7em;
+    border-radius: 15px;
+    background-color: steelblue;
+    background: linear-gradient(steelblue,rgba(255, 255, 255, 0.48));
+    border: none;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /Chat ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stylist Borders ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .frameone {
@@ -841,7 +967,7 @@ body a:hover {
 
 .box {
   position: relative;
-  background: #c7c7c7;
+  background: rgba(183, 166, 133, 0.48);
   width: 375px;
 }
 .ribbon {
@@ -855,7 +981,7 @@ body a:hover {
 .ribbon span {
   font-size: 10px;
   font-weight: bold;
-  color: #FFF;
+  color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   text-align: center;
   line-height: 20px;
@@ -864,7 +990,7 @@ body a:hover {
   width: 100px;
   display: block;
   background: #79A70A;
-  background: linear-gradient(#B6BAC9 0%, #808080 100%);
+  background: linear-gradient(rgb(214, 164, 51) 0%, rgba(109, 95, 65, 0.78) 100%);
   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
   position: absolute;
   top: 19px; left: -21px;
@@ -887,3 +1013,300 @@ body a:hover {
   border-bottom: 3px solid transparent;
   border-top: 3px solid #808080;
 }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~list-blogs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/ 
+/*-- blogs --*/
+.blogs,.mail,.typo,.single-info,.recent-posts,.services{
+	padding:5em 0;
+}
+.blog-all{
+  position:relative;
+}
+.blog-all-sub{
+	margin-bottom: 2em;
+    background-color: rgba(0, 0, 0, 0.66);
+    color: wheat;
+	padding:1.5em 1em 2em;
+    box-shadow: 0px 0px 1px #BABABA;
+	-webkit-box-shadow: 0px 0px 1px #BABABA;
+	-moz-box-shadow: 0px 0px 1px #BABABA;
+	-o-box-shadow: 0px 0px 1px #BABABA;
+	-ms-box-shadow: 0px 0px 1px #BABABA;
+}
+.blog-all-sub h3{
+    margin: 1em 0 2em;
+    color: #ffffff;
+    line-height: 1.8em;
+    text-align: center;
+    font-size: 14px;
+}
+.blog-all-sub p{
+    margin: 1em 0 2em;
+    color: #ffffff;
+    line-height: 1.8em;
+    text-align: center;
+    font-size: 13px;
+}
+.blog-all .p-mask, .row .product .vm-product-media-container .p-mask {
+    opacity: 0;
+    visibility: hidden;
+    background:rgb(0, 0, 0);
+    top: 0%;
+    position: absolute;
+    padding:0.5em 1.5em;
+    width: 100%;
+    -webkit-transform: translate3d( 0px, 100%, 0px );
+    -moz-transform: translate3d( 0px, 100%, 0px );
+    -ms-transform: translate3d( 0px, 100%, 0px );
+    -o-transform: translate3d( 0px, 100%, 0px );
+    transform: translate3d( 0px, 100%, 0px );
+    -webkit-transition: all .5s ease 0s;
+    -moz-transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
+    text-align: left;
+}
+.blog-all .p-mask .p-desc{
+    color: #a3a3a3;
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-size: 1em;
+}
+.blog-all:hover .p-mask, .row .product:hover .p-mask {
+    opacity: 1;
+    height:115px;
+    visibility: visible;
+    -webkit-transform: translate3d( 0px, 0px, 0px );
+    -moz-transform: translate3d( 0px, 0px, 0px );
+    -ms-transform: translate3d( 0px, 0px, 0px );
+    -o-transform: translate3d( 0px, 0px, 0px );
+    transform: translate3d( 0px, 0px, 0px );
+}
+.p-mask h4 a{
+	color:#C5C5C5;
+	font-family: 'Marcellus', serif;
+	font-size:.9em;
+	text-decoration:none;
+	line-height:1.8em;
+}
+.p-mask h4 a span{
+	font-size:1.3em;
+	color:#fff;
+	padding-right:.5em;
+}
+.p-mask ul li{
+	display:inline-block;
+	margin:1em 0 0 2em;
+}
+.p-mask ul li a{
+	font-size: 2em;
+	text-decoration:none;
+	color:#fff;
+	font-family: 'Marcellus', serif;
+}
+.p-mask ul li a i{
+	left:-.5em;
+}
+.more a,.image-overlay-content a{
+	padding:10px 20px;
+	color:#fff;
+	font-size:1em;
+	text-decoration:none;
+	font-family: 'Marcellus', serif;
+	background:#4B8F56;
+	position:relative;
+}
+input.btn.btn-info.btn-more {
+    border-radius: 16px;
+    background: linear-gradient(to bottom right, #6f6f6f, wheat);
+    border: none;
+}
+/* Overline From Left */
+.hvr-overline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+.hvr-overline-from-left:before,.blog-all:hover .more a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  top: 0;
+  background: #000;
+    height: 3px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-overline-from-left:hover:before, .hvr-overline-from-left:focus:before, .hvr-overline-from-left:active:before,.blog-all:hover .more a:before {
+  right: 0;
+}
+/*-- //blogs --*/blog-all-grids
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//list-blogs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/ 
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ My Profile ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.pro-box {
+    padding: 0em 3em 3em 3em;
+    background: linear-gradient(to right, rgba(128, 128, 128, 0.66), rgba(255, 255, 255, 0));
+    margin-top: 4px;
+    margin-bottom: 3em;
+    border-radius: 3px;
+}
+.pro-header {
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  margin:   25px auto 50px;
+  margin-top: 6em;
+  height:   300px;
+  position: relative;
+  width:    975px;
+}
+
+.profile-banner {
+  left:     0;
+  overflow: hidden;
+  /*position: absolute;*/
+  padding: 1em;
+  top:      0;
+  z-index:  1;
+}
+
+.profile-picture {
+  background-position: center center;
+  background-size: cover;
+  border: 5px #efefef solid;
+  border-radius: 50%;
+  bottom: -50px;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2), 1px 1px 4px rgba(0,0,0,0.3);
+  height: 148px;
+  left: 150px;
+  position: absolute;
+  width: 148px;
+  z-index: 3;
+}
+
+div.profile-stats {
+  bottom: 0;
+  border-top: 1px solid rgba(0,0,0,0.5);
+  left: 0;
+  padding: 15px 15px 15px 350px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  
+  /* Generated Gradient */
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0.5) 0%, rgba(0,0,0,0.51) 3%, rgba(0,0,0,0.75) 61%, rgba(0,0,0,0.5) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.5)), color-stop(3%,rgba(0,0,0,0.51)), color-stop(61%,rgba(0,0,0,0.75)), color-stop(100%,rgba(0,0,0,0.5)));
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
+ background: -o-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
+  background: -ms-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
+  background: linear-gradient(to bottom,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80000000',GradientType=0 );
+
+}
+
+div.profile-stats ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+div.profile-stats ul li {
+  color: #efefef;
+  display: block;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 50px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7)
+}
+
+div.profile-stats li span {
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+div.profile-stats a.follow {
+  display: block;
+  float: right;color: #ffffff;
+  margin-top: 5px;
+  text-decoration: none;
+  
+  /* This is a copy and paste from Bootstrap */
+  background-color: #49afcd;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #49afcd;
+  background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
+  background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+  background-repeat: repeat-x;
+  border-color: #2f96b4 #2f96b4 #1f6377;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+div.profile-stats a.follow.followed {
+  
+  /* Once again copied from Boostrap */
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #5bb75b;
+  background-image: -moz-linear-gradient(top, #62c462, #51a351);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+  background-image: -o-linear-gradient(top, #62c462, #51a351);
+  background-image: linear-gradient(to bottom, #62c462, #51a351);
+  background-repeat: repeat-x;
+  border-color: #51a351 #51a351 #387038;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+div.profile-table{
+  padding: 0em 0em 0em 3em;
+  border-bottom: none;
+  border-radius: 22px;
+  border-width: 10px;
+  background: linear-gradient(rgb(245, 222, 179),rgba(128, 128, 128, 0));
+}
+div.profile-table table {
+  width: 100%;
+  font-size: 21px;
+}
+div.profile-table table tr th {
+  width: 30%;
+}
+div.profile-table table tr td#td-data {
+  width: 55%;
+}
+.frameone {
+    border-style: groove;
+    border-color: #ececec;
+    border-width: 12px;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //My Profile ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

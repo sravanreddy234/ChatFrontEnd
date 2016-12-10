@@ -1,28 +1,33 @@
-<div id="list-events">
+
+<div class="blogs">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<fieldset>
-					<legend>Events</legend>
-					<div class="blog-list-font">
-						<div>
-							<div class="panel panel-default" ng-repeat="event in ctrl.events" style="margin-bottom: 2em;">
-								<a>
-									<div class="one">
-										<label><span style="color: black;">Event Name : </span>{{event.name}}</label>
-									</div>
-									<div class="one">
-										<label><span style="color: black;">Location : </span>{{event.venue}}</label>
-									</div> 
-									<input type="button" ng-click="ctrl.getSelectedEvent(event.id)"
-												class="btn btn-info floatright" value="View Event"
-												style="margin-top: 13px; width: 10em; margin-right: 8px;" />
-								</a>
+		<div class="blog-all-grids">
+			
+			<div>
+				<div class="col-md-4 blogs-grid" ng-repeat="event in ctrl.events" >
+					<div class="blog-all">
+						<div class="blog-all-sub frame">
+							<h3>{{event.name}}</h3>
+							<p style="text-align: center;">{{event.venue}}</p>
+							<div class="more">
+								<input type="button" class="btn btn-info btn-more"
+									ng-click="ctrl.getSelectedEvent(event.id)" value="Know More..">
 							</div>
 						</div>
+						<div class="p-mask">
+							<h4>
+								<a><span><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>{{event.name}}</a>
+							</h4>
+							<ul>
+								<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i> 5</a></li>
+								<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i> 15</a></li>
+								<li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> 5</a></li>
+							</ul>
+						</div>
 					</div>
-				</fieldset>
+				</div>
 			</div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 </div>

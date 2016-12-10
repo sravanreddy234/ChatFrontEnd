@@ -58,7 +58,7 @@ app.controller('ForumController', [
 				ForumService.fetchAllForumComments(id).then(function(d) {
 					self.forumComments = d;
 					
-					self.getSelectedForum(id);
+					self.getSelectedForum(id);		//calling getSelectedForum(id) method ...
 					$location.path('/view_forum');
 				}, function(errResponse) {
 					console.error('Error while fetching ForumComments...');
@@ -76,15 +76,22 @@ app.controller('ForumController', [
 						});
 			};
 			
-			self.createForumComment = function(forumComment) {
-				console.log("-->ForumController : calling createForumComment method.");
-				ForumService.createForumComment(forumComment).then(function(d) {
-					self.forumComment = d;
-					$location.path('/view_forum');
-				},
-						function(errResponse) {
-							console.error('Error while creating forumComment...');
-						});
+			self.createForumComment = function(forumComment, id) {
+				console.log("-->ForumController : calling 'createForumComment' method.", self.forum);
+				forumComment.forumId = id;
+				console.log("-->ForumController ForumId :" +forumComment.forumId);
+				//forumComment.forumId = id;
+				ForumService
+							.createForumComment(forumComment)
+							.then(function(d) {
+								self.forumComment = d;
+								console.log('-->ForumController :', self.forumComment)
+								self.fetchAllForumComments(id);
+								self.resetComment();
+							},
+							function(errResponse) {
+								console.error('Error while creating forumComment...');
+							});
 			};
 
 			self.updateForum = function(forum, id) {
@@ -116,12 +123,12 @@ app.controller('ForumController', [
 			
 			self.comment = function() {
 				{
-					console.log("-->ForumController : calling comment() method.", self.forumComment);
-					self.createForumComment(self.forumComment);
+					console.log("-->ForumController : calling comment() method.", self.forum);
+					self.createForumComment(self.forum);
 					console.log("Saving new Comment", self.forumComment);
 				}
 				self.resetComment();
-			}
+			};
 
 			self.edit = function(id) {
 				console.log('id to be edited', id);

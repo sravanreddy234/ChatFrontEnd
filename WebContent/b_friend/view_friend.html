@@ -1,29 +1,34 @@
-<div id="list-blogs">
+<div class="blogs">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<fieldset>
-					<legend>Find Friends</legend>
-					<div class="blog-list-font">
-						<div>
-							<div class="panel panel-default" ng-repeat="friend in ctrl.friends"
-									style="margin-bottom: 2em;">
-								<a>
-									<div class="one" ng-show="friend.userId==currentUser.id">
-										<label>{{friend.friendId}}</label>										
-									</div>
-									<div class="one" ng-show="friend.userId!=currentUser.id">
-										<label>{{friend.userId}}</label>										
-									</div>
-									<div class="one" ng-show="friend.status=='A'">
-										<label><span>Status : </span>Friend</label>
-									</div> 
-								</a>
+		<div class="blog-all-grids">
+			
+			<div>
+				<div class="col-md-4 blogs-grid" ng-repeat="friend in ctrl.friends" >
+					<div class="blog-all">
+						<div class="blog-all-sub frame">
+							<h3 ng-show="friend.userId==currentUser.id">{{friend.friendId}}</h3>
+							<h3 ng-show="friend.userId!=currentUser.id">{{friend.userId}}</h3>
+							<p style="text-align: center;" ng-show="friend.status=='A'">Hi! Friend, how are you?</p>
+							<div class="more">
+								<input type="button" class="btn btn-info btn-more"
+									ng-click="ctrl.unFriend(friend, friend.id)" value="Unfriend"
+									style="background: linear-gradient(to bottom right, #6f6f6f, #ef6b5e);">
 							</div>
 						</div>
+						<div class="p-mask" style="background: linear-gradient(black,black,rgba(255, 255, 255, 0));">
+							<h4 style="text-align: center;">
+								<a><span><ul>
+								<li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+							</ul></span></a>
+							</h4>
+						</div>
 					</div>
-				</fieldset>
+				</div>
 			</div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 </div>
+

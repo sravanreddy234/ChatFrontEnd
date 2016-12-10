@@ -1,35 +1,43 @@
-<div id="list-blogs">
+<div class="blogs">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-
-				<fieldset>
-					<legend>New Friend Requests</legend>
-					<div class="blog-list-font">
-						<div ng-show="currentUser !=''">
-							<div class="panel panel-default" ng-repeat="friend in newRequest" 
-									 ng-show="friend.status='N'" style="margin-bottom: 2em;">
-								<a>
-									<div class="one">
-										<label><span>Friend Id : </span>{{friend.userId}}</label>
-									</div>
-									<div class="one">
-										<label><span>Friend Id : </span>{{friend.friendId}}</label>
-									</div>
-									<input type="button" class="btn btn-info floatright" value="Accept"
-										style="margin-top: 13px; margin-bottom: 3em; width: 9em; margin-right: 8px;"
-										ng-click="ctrl.acceptFriend(friend, friend.id)" />
-									<input type="button" class="btn btn-info floatright" value="Reject"
-										style="margin-top: 13px; margin-bottom: 3em; width: 9em; margin-right: 8px;"
-										ng-click="ctrl.rejectFriend(friend, friend.id)" />
-								</a>								
+		<div class="blog-all-grids">
+			
+			<div ng-show="currentUser !=''">
+				<div class="col-md-4 blogs-grid" ng-repeat="friend in newRequest"
+							ng-show="friend.status='N'" >
+					<div class="blog-all">
+						<div class="blog-all-sub frame">
+							<h3>{{friend.userId}}</h3>
+							<p style="text-align: center;">{{friend.friendId}}</p>
+							<div class="more">
+								<input type="button" class="btn btn-info btn-more"
+									ng-click="ctrl.acceptFriend(friend, friend.id)" value="Accept"
+									style="background: linear-gradient(to bottom right, #6f6f6f, #60d059);">
+								<input type="button" class="btn btn-info btn-more"
+									ng-click="ctrl.rejectFriend(friend, friend.id)" value="Reject"
+									style="background: linear-gradient(to bottom right, #6f6f6f, #ef6b5e);">
 							</div>
 						</div>
+						<div class="p-mask">
+							<h4>
+								<a><span></span>Hi!! Lets bind...</a>
+							</h4>
+							<ul>
+								<li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
 					</div>
-				</fieldset>
+				</div>
 			</div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
+</div>
+
 	
+	
+								
 	
 	

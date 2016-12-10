@@ -1,7 +1,7 @@
 <div id="register" >
 	<div class="container">
 		<div class="form-area">
-			<div class="row">
+			<div class="row y-row">
 				<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 					<div ng-show='ctrl.user.errorMessage!=""'>
 						<div class="alart alart-danger fade in">
@@ -24,26 +24,26 @@
 								</div>
 
 								<div class="one-half">
-									<input type="text" name="id"required
+									<input type="text" name="id"required pattern=".{5,15}"
 										ng-minlength="5" placeholder="User ID"
 										ng-model="ctrl.user.id" />
 								</div>
 								<div class="one-half">
-									<input type="text" name="name" required
+									<input type="text" name="name" required pattern=".{5,50}"
 										ng-minlength="5" placeholder="User Name"
 										ng-model="ctrl.user.name" />
 								</div>
 								<div class="one-half">
-									<input type="password" name="password" required
+									<input type="password" name="password" required pattern=".{5,15}"
 										ng-minlength="5" placeholder="Password"
 										ng-model="ctrl.user.password" />
 								</div>
 								<div class="one-half">
-									<input type="email" name="email" id="email" required
+									<input type="email" name="email" id="email" required pattern=".{5,50}"
 										placeholder="Email Id" ng-model="ctrl.user.email" />
 								</div>
 								<div class="one-half">
-									<input type="tel" name="phone" id="phone" required
+									<input type="tel" name="phone" id="phone" required pattern=".{10}"
 										placeholder="Phone No" ng-model="ctrl.user.phone" />
 								</div>
 								<div class="one-half">

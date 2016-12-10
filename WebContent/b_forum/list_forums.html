@@ -1,30 +1,32 @@
-<div id="list-blogs">
+<div class="blogs">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<fieldset>
-					<legend>Welcome to Forum</legend>
-					<div class="blog-list-font">						
-						<div>
-							<div class="panel panel-default" ng-repeat="forum in ctrl.forums"
-								style="margin-bottom: 2em;">
-								<a>
-									<div class="one">
-										<label><span style="color: black;">Forum Id : </span>{{forum.id}}</label>
-									</div>
-									<div class="one">
-										<label><span style="color: black;">Written By : </span>{{forum.userId}}</label>
-									</div> 
-										<input type="button" ng-click="ctrl.fetchAllForumComments(forum.id)"
-												class="btn btn-success floatright" value="View" name="myForm"
-												style="margin-top: 13px; width: 10em; margin-right: 8px;" />
-								</a>
+		<div class="blog-all-grids">
+			
+			<div>
+				<div class="col-md-4 blogs-grid" ng-repeat="forum in ctrl.forums" >
+					<div class="blog-all">
+						<div class="blog-all-sub frame">
+							<h3>{{forum.id}}</h3>
+							<p style="text-align: center;">{{forum.userId}}</p>
+							<div class="more">
+								<input type="button" class="btn btn-info btn-more"
+									ng-click="ctrl.fetchAllForumComments(forum.id)" value="Know More..">
 							</div>
 						</div>
+						<div class="p-mask">
+							<h4>
+								<a><span><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>{{forum.id}}</a>
+							</h4>
+							<ul>
+								<li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i> 5</a></li>
+								<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i> 15</a></li>
+								<li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> 5</a></li>
+							</ul>
+						</div>
 					</div>
-				</fieldset>
-				<div class="clearfix"></div>
+				</div>
 			</div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 </div>
