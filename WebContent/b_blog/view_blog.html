@@ -16,6 +16,16 @@
                 <small>{{selectedBlog.userId}}</small>
               </p>
             </div><!-- /blog-area -->
+	        	<div class="col-md-8 like-forum" ng-hide="currentUser==''">
+	          		<div class="like-btn-pos">
+						<button type="button" class="btn-more forum-like-style"
+							ng-click="ctrl.likeBlog(selectedBlog, selectedBlog.id)">
+							<i class="fa fa-thumbs-up" aria-hidden="true">&nbsp;Like&nbsp;&nbsp;
+								<span>{{selectedBlog.countLike}}</span>
+							</i>
+						</button>
+					</div>
+		        </div>
           </div><!-- /col-md-8 -->
           
           

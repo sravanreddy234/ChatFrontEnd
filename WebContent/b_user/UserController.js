@@ -7,7 +7,8 @@ app.controller('UserController', [
 		'UserService',
 		'$location',
 		'$rootScope',
-		function($http, $cookieStore, $scope, UserService, $location, $rootScope) {
+		'$window',
+		function($http, $cookieStore, $scope, UserService, $location, $rootScope, $window) {
 			console.log("UserController....")
 			var self = this;
 			self.user = {
@@ -45,10 +46,12 @@ app.controller('UserController', [
 
 			self.updateUser = function(user, id) {
 				console.log("--> UserController : calling updateUser method.");
-				UserService.updateUser(user, id).then(self.fetchAllUsers,
-						function(errResponse) {
-							console.error('Error while updating User...');
-						});
+				UserService.updateUser(user, id).then(function(d) {
+					self.users = d;
+					$location.path('/myprofile');
+					}, function(errResponse) {
+						console.error('--> UserController : Error while updating User...');
+					});
 			};
 
 			self.authenticate = function(user) {
@@ -79,6 +82,8 @@ app.controller('UserController', [
 				$cookieStore.remove('currentUser');
 				UserService.logout();
 				console.log("-->UserController : User Logged out.");
+				
+				$window.location.reload();
 				$location.path('/');
 			}
 

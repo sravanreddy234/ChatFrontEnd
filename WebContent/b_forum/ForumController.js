@@ -15,7 +15,9 @@ app.controller('ForumController', [
 				post_date : '',
 				userId : '',
 				errorCode : '',
-				errorMessage : ''
+				errorMessage : '',
+				countLike : '',
+			    countComment : ''
 			}
 			self.forums = [];
 			
@@ -80,7 +82,6 @@ app.controller('ForumController', [
 				console.log("-->ForumController : calling 'createForumComment' method.", self.forum);
 				forumComment.forumId = id;
 				console.log("-->ForumController ForumId :" +forumComment.forumId);
-				//forumComment.forumId = id;
 				ForumService
 							.createForumComment(forumComment)
 							.then(function(d) {
@@ -109,6 +110,27 @@ app.controller('ForumController', [
 							console.error('Error while deleting forum...')
 						});
 			};
+			
+			self.likeForum = function(forum, id) {
+				console.log("-->ForumController : calling likeForum() method. Forum id is : "+id);
+				console.log("-->ForumController", self.forum);
+				ForumService.likeForum(forum, id).then(
+						self.fetchAllForums,
+						function(errResponse) {
+							console.error("Error while liking the forum...");
+						});
+			};
+			
+			self.countComment = function(forum, id) {
+				console.log("-->ForumController : calling countComment() method. Forum id is : "+id);
+				console.log("-->ForumController", self.forum);
+				ForumService.countComment(forum, id).then(
+						self.fetchAllForums,
+						function(errResponse) {
+							console.error("Error while commenting on a forum...");
+						});
+			};
+			
 
 	/*****************************************************************************/
 			
@@ -121,15 +143,6 @@ app.controller('ForumController', [
 				self.reset();
 			};
 			
-			self.comment = function() {
-				{
-					console.log("-->ForumController : calling comment() method.", self.forum);
-					self.createForumComment(self.forum);
-					console.log("Saving new Comment", self.forumComment);
-				}
-				self.resetComment();
-			};
-
 			self.edit = function(id) {
 				console.log('id to be edited', id);
 				for (var i = 0; i < self.forums.length; i++) {

@@ -4,7 +4,7 @@ app.factory('AdminService', [ '$http', '$q', '$rootScope',
 		function($http, $q, $rootScope) {
 			console.log("AdminService...");
 
-			var BASE_URL = 'http://localhost:8081/Binder'
+			var BASE_URL = 'http://localhost:8088/ChatFrontEnd'
 			return {
 
 			};

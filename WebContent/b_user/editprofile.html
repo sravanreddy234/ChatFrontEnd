@@ -4,9 +4,8 @@
 			<fieldset>
 				<legend>
 					<span>My Profile</span>
-					<a href="#/edit-profile" class="btn btn-info btn-edit">
-						<span>Edit Profile</span> 
-					</a>
+					<button class="btn btn-success btn-edit" 
+							ng-click="ctrl.updateUser(currentUser, currentUser.id)">Save Profile</button>
 				</legend>
 				<div>
 					<form class="col-md-8 form-profile">
@@ -15,7 +14,7 @@
 								<a class="floatleft">User ID</a>
 							</div>
 							<div class="col-md-8">
-								<label class="floatleft"> : {{currentUser.id}}</label>
+								<label class="floatleft" > : {{currentUser.id}}</label>
 							</div>
 						</div>
 						<div class="one-profile">
@@ -23,7 +22,10 @@
 								<a class="floatleft">User Name</a>
 							</div>
 							<div class="col-md-8">
-								<label class="floatleft"> : {{currentUser.name}}</label>
+								<label class="floatleft"> : 
+									<input type="text" name="name" required pattern=".{5,50}"
+										placeholder="{{currentUser.name}}" ng-model="currentUser.name" />
+								</label>
 							</div>
 						</div>
 						<div class="one-profile">
@@ -31,7 +33,12 @@
 								<a class="floatleft">Gender</a>
 							</div>
 							<div class="col-md-8">
-								<label class="floatleft"> : {{currentUser.gender}}</label>
+								<label class="floatleft"> : 
+									<input type="radio" name="gender" id="gender" value="male"
+										ng-model="currentUser.gender" required> Male 
+									<input type="radio" name="gender" id="gender" value="female"
+										ng-model="currentUser.gender" required> Female
+								</label>
 							</div>
 						</div>
 						<div class="one-profile">
@@ -39,7 +46,10 @@
 								<a class="floatleft">Email Id</a>
 							</div>
 							<div class="col-md-8">
-								<label class="floatleft"> : {{currentUser.email}}</label>
+								<label class="floatleft"> : 
+									<input type="email" name="email" id="email" required pattern=".{5,50}"
+										placeholder="{{currentUser.email}}" ng-model="currentUser.email" />
+								</label>
 							</div>
 						</div>
 						<div class="one-profile">
@@ -47,7 +57,10 @@
 								<a class="floatleft">Phone No.</a>
 							</div>
 							<div class="col-md-8">
-								<label class="floatleft"> : {{currentUser.phone}}</label>
+								<label class="floatleft"> : 
+									<input type="tel" name="phone" id="phone" required pattern=".{10}"
+										placeholder="{{currentUser.phone}}" ng-model="currentUser.phone" />
+								</label>
 							</div>
 						</div>
 						<div class="one-profile">
@@ -55,7 +68,7 @@
 								<a class="floatleft">Role in Binder</a>
 							</div>
 							<div class="col-md-8">
-								<label class="floatleft"> : {{currentUser.role}}</label>
+								<label class="floatleft" > : {{currentUser.role}}</label>
 							</div>
 						</div>
 					</form>

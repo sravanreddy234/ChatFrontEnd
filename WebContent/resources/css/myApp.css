@@ -6,7 +6,7 @@ html,
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background: url(http://www.planwallpaper.com/static/images/wallpaper-hd-3151.jpg) no-repeat center center fixed; 
+  background: url(http://wallpapers-and-backgrounds.net/wp-content/uploads/2016/03/white-brick-background_1_1280x720.jpg) no-repeat center center fixed; 
   background-size: cover;
   height: 100%;
   color: black;
@@ -14,9 +14,9 @@ html,
   text-shadow: 0 1px 3px rgba(0,0,0,.5); 
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~|| body || header || footer ||~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.a-hover:hover {
+/* .a-hover:hover {
 	font-size: x-large;
-}
+} */
 .navbar-default .navbar-nav>li>a {
     color: #6d6d6d;
     text-shadow: 2px 2px 4px white;
@@ -64,9 +64,9 @@ html,
 }
 
 nav.navbar.navbar-default.navbar-fixed-top {
-	box-shadow: inset 0 0 16px rgb(236, 217, 174);
+	box-shadow: inset 0 0 16px rgb(107, 107, 107);
     height: 95px;
-    background: linear-gradient(rgba(245, 222, 179, 0.41),wheat,rgba(245, 222, 179, 0.53));
+    background: linear-gradient(rgb(130, 130, 130),rgb(255, 255, 255),rgba(206, 206, 206, 0.53));
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
@@ -86,7 +86,7 @@ nav.navbar.navbar-default.navbar-fixed-top {
 	padding: 5px 40px;
 }
 ul.dropdown-menu {
-    background-color: rgba(245, 222, 179, 0.8);
+    rgba(230, 230, 230, 0.8);
 }
 
 .link-effect-12 a {
@@ -429,7 +429,7 @@ a:hover {
  */
 .home {
 	padding: 40px;
-    background: linear-gradient(to bottom right, wheat, rgba(255, 255, 0, 0), rgba(255, 255, 0, 0), wheat);
+    background: linear-gradient(to bottom right, darkgrey, rgba(255, 255, 0, 0), rgba(255, 255, 0, 0), darkgrey);
     font-family: -webkit-pictograph;
     border-radius: 13px;
     background-color: rgba(255, 255, 255, 0.65);
@@ -633,7 +633,7 @@ textarea {
 }
 .widget{
   padding: 2px 10px 10px;
-  background-color: rgba(245, 222, 179, 0.63);
+  background-color: rgba(255, 255, 255, 0.5);
   -webkit-box-shadow: 0 0 10px -2px rgba(0,0,0,0.2);
    box-shadow: 0 0 10px -2px rgba(0,0,0,0.2);
 }
@@ -704,7 +704,7 @@ div#forum-page {
     margin-bottom: 5em;
 }
 .comment-zone{
-	background: linear-gradient(to right, rgba(255, 255, 255, 0.62) , rgba(255, 255, 255, 0));
+	background: linear-gradient(to right, rgba(138, 138, 138, 0.8) , rgba(255, 255, 255, 0));
     margin-top: 3em;
 }
 .col-xs-10.recent-comment-grid-right {
@@ -712,20 +712,20 @@ div#forum-page {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0));
 }
 .forum-head{
-	background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.92), rgba(0, 0, 0, 0));
+	/* background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.92), rgba(0, 0, 0, 0)); */
 }
 .forum-top{
 	padding: 7px;
     border-radius: 15px;
-    background: linear-gradient(to right, rgba(245, 222, 179, 0), wheat, rgba(245, 222, 179, 0));
+    /* background: linear-gradient(to right, rgba(245, 222, 179, 0), wheat, rgba(245, 222, 179, 0)); */
 }
 #x-area{
-	background: linear-gradient(to right, rgba(140, 140, 140, 0.35) , rgba(255, 255, 255, 0));
+	/* background: linear-gradient(to right, rgba(245, 222, 179, 0.8) , rgba(245, 222, 179, 0.7), rgba(255, 255, 255, 0)); */
 	padding: 1em;
 }
 h1#x-name {
     margin-bottom: 1em;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(239, 218, 143, 0.78),rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(181, 181, 181, 0.78),rgba(255, 255, 255, 0));
 }
 .x-padding{
 	    padding: 4px;
@@ -758,10 +758,25 @@ h1#x-name {
 .y-row{
 	 background: linear-gradient(to right, rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.73),rgba(255, 255, 255, 0));
 }
-
-
-
-
+.like-forum{
+	padding-left: 0px;
+    text-shadow: 0px 0px 2px white;
+}
+.like-btn-pos{
+	float: left;
+	margin-top: 8px;
+	background-color: wheat;
+}
+.forum-like-style{
+	width: 7em;
+	background: linear-gradient(to right, #2f99c1, rgba(47, 153, 193, 0.5),rgba(121, 121, 121, 0.42));
+}
+.forum-like-style:focus{
+	background: linear-gradient(to right, #2fc169, rgba(47, 193, 105, 0.5),rgba(121, 121, 121, 0.42));
+}
+i.fa.fa-thumbs-up{
+	font-size: initial;
+}
 
 
 
@@ -948,6 +963,7 @@ width: 300px;
 p {
 	margin: 0;
 	text-align: justify;
+	/* text-shadow: 1px 1px 1px black; */
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Marcellus', serif;
@@ -967,7 +983,7 @@ body a:hover {
 
 .box {
   position: relative;
-  background: rgba(183, 166, 133, 0.48);
+  background: rgba(105, 105, 105, 0.27);
   width: 375px;
 }
 .ribbon {
@@ -989,8 +1005,7 @@ body a:hover {
   -webkit-transform: rotate(-45deg);
   width: 100px;
   display: block;
-  background: #79A70A;
-  background: linear-gradient(rgb(214, 164, 51) 0%, rgba(109, 95, 65, 0.78) 100%);
+  background: linear-gradient(rgb(122, 218, 218) 0%, rgba(53, 53, 53, 0.78) 100%);
   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
   position: absolute;
   top: 19px; left: -21px;
@@ -1015,7 +1030,7 @@ body a:hover {
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~list-blogs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/ 
-/*-- blogs --*/
+
 .blogs,.mail,.typo,.single-info,.recent-posts,.services{
 	padding:5em 0;
 }
@@ -1154,159 +1169,42 @@ input.btn.btn-info.btn-more {
 .hvr-overline-from-left:hover:before, .hvr-overline-from-left:focus:before, .hvr-overline-from-left:active:before,.blog-all:hover .more a:before {
   right: 0;
 }
-/*-- //blogs --*/blog-all-grids
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//list-blogs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/ 
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ My Profile ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-.pro-box {
-    padding: 0em 3em 3em 3em;
-    background: linear-gradient(to right, rgba(128, 128, 128, 0.66), rgba(255, 255, 255, 0));
-    margin-top: 4px;
-    margin-bottom: 3em;
-    border-radius: 3px;
-}
-.pro-header {
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-  margin:   25px auto 50px;
-  margin-top: 6em;
-  height:   300px;
-  position: relative;
-  width:    975px;
-}
-
-.profile-banner {
-  left:     0;
-  overflow: hidden;
-  /*position: absolute;*/
-  padding: 1em;
-  top:      0;
-  z-index:  1;
-}
-
-.profile-picture {
-  background-position: center center;
-  background-size: cover;
-  border: 5px #efefef solid;
-  border-radius: 50%;
-  bottom: -50px;
-  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2), 1px 1px 4px rgba(0,0,0,0.3);
-  height: 148px;
-  left: 150px;
-  position: absolute;
-  width: 148px;
-  z-index: 3;
-}
-
-div.profile-stats {
-  bottom: 0;
-  border-top: 1px solid rgba(0,0,0,0.5);
-  left: 0;
-  padding: 15px 15px 15px 350px;
-  position: absolute;
-  right: 0;
-  z-index: 2;
-  
-  /* Generated Gradient */
-  background: -moz-linear-gradient(top,  rgba(255,255,255,0.5) 0%, rgba(0,0,0,0.51) 3%, rgba(0,0,0,0.75) 61%, rgba(0,0,0,0.5) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.5)), color-stop(3%,rgba(0,0,0,0.51)), color-stop(61%,rgba(0,0,0,0.75)), color-stop(100%,rgba(0,0,0,0.5)));
-  background: -webkit-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
- background: -o-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
-  background: -ms-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
-  background: linear-gradient(to bottom,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80000000',GradientType=0 );
-
-}
-
-div.profile-stats ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-div.profile-stats ul li {
-  color: #efefef;
-  display: block;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  margin-right: 50px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7)
-}
-
-div.profile-stats li span {
-  display: block;
-  font-size: 16px;
-  font-weight: normal;
-}
-
-div.profile-stats a.follow {
-  display: block;
-  float: right;color: #ffffff;
-  margin-top: 5px;
-  text-decoration: none;
-  
-  /* This is a copy and paste from Bootstrap */
-  background-color: #49afcd;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #49afcd;
-  background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
-  background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
-  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
-  background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
-  background-repeat: repeat-x;
-  border-color: #2f96b4 #2f96b4 #1f6377;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-  display: inline-block;
-  padding: 4px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  line-height: 20px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-}
-
-div.profile-stats a.follow.followed {
-  
-  /* Once again copied from Boostrap */
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #5bb75b;
-  background-image: -moz-linear-gradient(top, #62c462, #51a351);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
-  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
-  background-image: -o-linear-gradient(top, #62c462, #51a351);
-  background-image: linear-gradient(to bottom, #62c462, #51a351);
-  background-repeat: repeat-x;
-  border-color: #51a351 #51a351 #387038;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-}
-div.profile-table{
-  padding: 0em 0em 0em 3em;
-  border-bottom: none;
-  border-radius: 22px;
-  border-width: 10px;
-  background: linear-gradient(rgb(245, 222, 179),rgba(128, 128, 128, 0));
-}
-div.profile-table table {
-  width: 100%;
-  font-size: 21px;
-}
-div.profile-table table tr th {
-  width: 30%;
-}
-div.profile-table table tr td#td-data {
-  width: 55%;
-}
-.frameone {
-    border-style: groove;
-    border-color: #ececec;
-    border-width: 12px;
-}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ My Profile ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	.one-profile{
+		padding: 5px;
+    	height: 30px;
+    	margin-top: 1px;
+    	border-radius: 5px;
+    	background: rgba(128, 128, 128, 0.48);		
+	}
+	.btn-edit {
+		float: right;
+		margin: 0 15px 5px 0px;
+		width: 100px;
+	}
+	.row-profile {
+		width:100%; 
+		height:500px; 
+		margin-top:20px;
+	}
+	.form-profile {
+		padding: 10px;
+	}
+	.profile-img {
+		float: right;
+		height:200px;
+		border-radius: 50%;
+	}
+	.profile-base {
+		padding: 10px;
+    	background: rgba(98, 98, 99, 0.18);
+    }
+    a.floatleft {
+    	color: aliceblue;
+    	text-shadow: 2px 2px 2px black;
+    }
+	
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //My Profile ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

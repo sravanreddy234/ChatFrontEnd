@@ -17,6 +17,7 @@ app.controller('BlogController', [
 				post_date : '',
 				userId : '',
 				status : '',
+				countLike : '',
 				errorCode : '',
 				errorMessage : ''
 			}
@@ -92,6 +93,17 @@ app.controller('BlogController', [
 						function(errResponse) {
 							console.error("Error while rejecting blog...")
 						});
+			};
+			
+			self.likeBlog = function(blog, id) {
+				console.log("-->BlogController : calling likeBlog() method : Blog id is : "+id);
+				console.log("-->BlogController", self.blog);
+				BlogService.likeBlog(blog, id).then(
+						self.fetchAllBlogs,
+						function(errResponse) {
+							console.error("Error while liking the blog...")
+						});
+				
 			};
 
 			self.fetchAllBlogs();

@@ -30,6 +30,11 @@ app.config(function($routeProvider) {		//We can use config() block to inject onl
 		templateUrl : 'b_user/myprofile.html',
 		controller : 'UserController as ctrl'
 	})
+	
+	.when('/edit-profile', {
+		templateUrl : 'b_user/editprofile.html',
+		controller : 'UserController as ctrl'
+	})
 
 	/**
 	 * Blog related mapping
@@ -117,8 +122,7 @@ app.config(function($routeProvider) {		//We can use config() block to inject onl
 	 */
 
 	.when('/about', {
-		templateUrl : 'b_about/about.html',
-		controller : 'AboutController as ctrl'
+		templateUrl : 'b_about/about.html'
 	})
 
 	/**

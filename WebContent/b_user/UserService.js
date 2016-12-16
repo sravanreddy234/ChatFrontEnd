@@ -4,7 +4,7 @@ app.factory('UserService', ['$http', '$q', '$rootScope',
 	function($http, $q, $rootScope) {
 		console.log('UserService...');
 
-		var BASE_URL = 'http://localhost:8081/Binder'
+		var BASE_URL = 'http://localhost:8088/ChatFrontEnd'
 		return {
 			
 			fetchAllUsers : function() {
@@ -49,7 +49,7 @@ app.factory('UserService', ['$http', '$q', '$rootScope',
 			updateUser : function(user, id) {
 				console.log("--> UserService : calling 'updateUser' method.");
 				return $http
-							.put(BASE_URL+'/user/'+id)
+							.put(BASE_URL+'/user/'+id, user)
 							.then(function(response) {
 								return response.data;
 							},
@@ -81,10 +81,12 @@ app.factory('UserService', ['$http', '$q', '$rootScope',
 									$rootScope.currentUser = {
 											name: response.data.name,
 											id: response.data.id,
+											password: response.data.password,
 											role: response.data.role,
 											email:response.data.email,
 											phone:response.data.phone,
-											gender:response.data.gender
+											gender:response.data.gender,
+											isOnline:response.data.isOnline
 									};
 								}
 								return response.data;

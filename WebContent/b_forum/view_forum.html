@@ -1,93 +1,121 @@
 <div id="forum-page">
-      <div class="container">
-        <div class="row" style="margin-top: 2em;">
-          <div class="col-md-8">
-            <h1 class="text-uppercase" id="x-name"><a style="color: #efefef; text-decoration: none;">Forum</a></h1>
-            <h4 class="forum-top">Written By : {{selectedForum.userId}} &nbsp;&nbsp;   On {{selectedForum.postDate | date}}</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8 forum-head" style="padding: 2em;">
-            <div id="x-area">
-              <p>{{selectedForum.description}}</p>
-              <p class="author text-right">
-                <strong>Best regards</strong>
-                <br>
-                <small>{{selectedForum.userId}}</small>
-              </p>
-            </div>
-            <!-- /forum-area -->
-            
-            <!-- forum-comment-area -->
-            <div class="comment-zone">
-            	<div class="recent-comment">	
-					<h3 style="float: left; padding: 15px;">Recent <span style="color: #337ab7;">Comments</span></h3>
-					<div class="recent-comment-grids">
-						<div class="recent-comment-grid">
-							<div class="col-xs-10 recent-comment-grid-right" ng-repeat="forumComment in selectedForumComments">
-								<h4 style="padding: 9px;">
-									<a style="float: left;" href="#"><span style="color: black;">Comment By : </span>{{forumComment.userId}}</a>
-								</h4>
-								<p style="padding: 2em;">{{forumComment.comment}}</p>								
-							</div>							
-						</div>					
-					</div>
-						<div class="clearfix"> </div>	
+	<div class="container">
+		<div class="row" style="margin-top: 2em;">
+			<div class="col-md-8">
+				<h1 class="text-uppercase" id="x-name">
+					<a style="color: #efefef; text-decoration: none;">Forum</a>
+				</h1>
+				<h4 class="forum-top">Written By : {{selectedForum.userId}}
+					&nbsp;&nbsp; On {{selectedForum.postDate | date}}</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 forum-head" style="padding: 2em;">
+				<div id="x-area">
+					<p>{{selectedForum.description}}</p>
+					<p class="author text-right">
+						<strong>Best regards</strong> <br> <small>{{selectedForum.userId}}</small>
+					</p>
 				</div>
-            
-            	<div ng-hide="currentUser==''">
-            		<div class="" style="padding: 1em;">
-						<fieldset>
-							<legend></legend>
-							<h3>Leave a <span style="color: #337ab7;">Comment</span></h3>
-							<div class="form-inner">
-								<form  name="myForm"
-									class="form-horizontal">
-									<div class="one">
-										<textarea type="text" required placeholder="Write your comment here..." 
-												ng-model="ctrl.forumComment.comment" ></textarea>
-									</div>
-									<div>
-										<input type="button" class="btn btn-info kp-button floatright" 
-											ng-click="ctrl.createForumComment(ctrl.forumComment, selectedForum.id)"	value="submit">
-									</div>
-								</form>
-							</div>
-						</fieldset>
+				<div class="col-md-8 like-forum" ng-hide="currentUser==''">
+					<div class="like-btn-pos">
+						<button type="button" class="btn-more forum-like-style"
+							ng-click="ctrl.likeForum(selectedForum, selectedForum.id)">
+							<i class="fa fa-thumbs-up" aria-hidden="true">&nbsp;Like&nbsp;&nbsp;
+								<span>{{selectedForum.countLike}}</span> 
+							</i> 
+						</button>
 					</div>
-					<div  class="clearfix"></div>
-            	</div>
-            </div>
-            <!-- /forum-comment-area -->
-            
-          </div><!-- /col-md-8 -->
-          
-          
-          
-          
-          <div class="col-md-4 box" style="transform: rotate(15deg);">
-          <div class="ribbon"><span>POPULAR</span></div>
-            <div class="widget">
-              <div class="minor-header"><h4><i class="fa fa-cubes fa-fw"></i> Other forums</h4></div>
-              <div class="media">
-              	<h4 class="media-heading">Media heading</h4>
-                  Cras sit amet nibh libero, in gravida nulla..
-              </div>
-              <div class="media">
-                <h4 class="media-heading">Media heading</h4>
-                  Cras sit amet nibh libero, in gravida nulla..
-              </div>
-              <div class="media">
-                <h4 class="media-heading">Media heading</h4>
-                  Cras sit amet nibh libero, in gravida nulla..
-              </div>
-              <div class="media">
-                <h4 class="media-heading">Media heading</h4>
-                  Cras sit amet nibh libero, in gravida nulla..
-                </div>
-            </div><!-- /widget -->
-          </div><!-- /col-md-4 -->
+				</div>
+				<!-- /forum-area -->
 
-        </div>
-      </div>
-    </div>
+				<!-- forum-comment-area -->
+				<div class="comment-zone">
+					<div class="recent-comment">
+						<h3 style="float: left; padding: 15px;">
+							Recent <span style="color: #337ab7;">Comments</span>
+						</h3>
+						<div class="recent-comment-grids">
+							<div class="recent-comment-grid">
+								<div class="col-xs-10 recent-comment-grid-right"
+									ng-repeat="forumComment in selectedForumComments">
+									<h4 style="padding: 9px;">
+										<a style="float: left;" href="#"><span
+											style="color: black;">Comment By : </span>{{forumComment.userId}}</a>
+									</h4>
+									<p style="padding: 2em;">{{forumComment.comment}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+
+					<div ng-hide="currentUser==''">
+						<div class="" style="padding: 1em;">
+							<fieldset>
+								<legend></legend>
+								<h3>
+									Leave a <span style="color: #337ab7;">Comment</span>
+								</h3>
+								<div class="form-inner">
+									<form name="myForm" class="form-horizontal">
+										<div class="one">
+											<textarea type="text" required
+												placeholder="Write your comment here..."
+												ng-model="ctrl.forumComment.comment"></textarea>
+										</div>
+										<div>
+											<input type="button"
+												class="btn btn-info kp-button floatright"
+												ng-click="ctrl.createForumComment(ctrl.forumComment, selectedForum.id); ctrl.countComment(selectedForum, selectedForum.id);"
+												value="submit">
+										</div>
+									</form>
+								</div>
+							</fieldset>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<!-- /forum-comment-area -->
+
+			</div>
+			<!-- /col-md-8 -->
+
+
+
+
+			<div class="col-md-4 box" style="transform: rotate(15deg);">
+				<div class="ribbon">
+					<span>POPULAR</span>
+				</div>
+				<div class="widget">
+					<div class="minor-header">
+						<h4>
+							<i class="fa fa-cubes fa-fw"></i> Other forums
+						</h4>
+					</div>
+					<div class="media">
+						<h4 class="media-heading">Media heading</h4>
+						Cras sit amet nibh libero, in gravida nulla..
+					</div>
+					<div class="media">
+						<h4 class="media-heading">Media heading</h4>
+						Cras sit amet nibh libero, in gravida nulla..
+					</div>
+					<div class="media">
+						<h4 class="media-heading">Media heading</h4>
+						Cras sit amet nibh libero, in gravida nulla..
+					</div>
+					<div class="media">
+						<h4 class="media-heading">Media heading</h4>
+						Cras sit amet nibh libero, in gravida nulla..
+					</div>
+				</div>
+				<!-- /widget -->
+			</div>
+			<!-- /col-md-4 -->
+
+		</div>
+	</div>
+</div>
