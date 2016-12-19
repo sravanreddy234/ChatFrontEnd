@@ -22,8 +22,8 @@ app.controller('UserController', [
 				phone: '',
 				role: '',
 				isOnline: '',
-				image: '',
-				photos: ''
+				//image: '',
+				//photos: ''
 			};
 			self.users = [];
 
