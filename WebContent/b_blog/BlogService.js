@@ -4,7 +4,7 @@ app.factory('BlogService', ['$http', '$q', '$rootScope',
 		function($http, $q, $rootScope) {
 			console.log("BlogService...")
 
-			var BASE_URL = 'http://localhost:8088/ChatFrontEnd'
+			var BASE_URL = 'http://localhost:8088/ChatBackEnd'
 				return {
 				
 				getSelectedBlog : function(id) {

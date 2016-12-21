@@ -4,7 +4,7 @@ app.factory('FriendService', ['$http', '$q', '$rootScope',
 		function($http, $q, $rootScope) {
 			console.log("FriendService...");
 
-			var BASE_URL = 'http://localhost:8088/ChatFrontEnd/user'
+			var BASE_URL = 'http://localhost:8088/ChatBackEnd/user'
 			return {
 				
 				getSelectedFriend : function(id) {

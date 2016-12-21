@@ -4,7 +4,7 @@ app.factory('UserService', ['$http', '$q', '$rootScope',
 	function($http, $q, $rootScope) {
 		console.log('UserService...');
 
-		var BASE_URL = 'http://localhost:8088/ChatFrontEnd'
+		var BASE_URL = 'http://localhost:8088/ChatBackEnd'
 		return {
 			
 			fetchAllUsers : function() {

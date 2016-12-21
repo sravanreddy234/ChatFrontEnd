@@ -4,7 +4,7 @@ app.factory('JobService', ['$http', '$q', '$rootScope',
     function($http, $q, $rootScope) {
 	console.log("JobService...");
 
-		var BASE_URL='http://localhost:8088/ChatFrontEnd'
+		var BASE_URL='http://localhost:8088/ChatBackEnd'
 			return {
 
 			listJobs : function() {
